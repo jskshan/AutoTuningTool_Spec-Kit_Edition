@@ -1,0 +1,41 @@
+<?xml version="1.0" standalone="yes"?>
+<DocumentElement>
+  <ScreenSizeItem>
+    <Name>10.1" (16:10)</Name>
+    <Width>217.00</Width>
+    <Height>136.00</Height>
+  </ScreenSizeItem>
+  <ScreenSizeItem>
+    <Name>11.6" (16:9)</Name>
+    <Width>256.80</Width>
+    <Height>144.45</Height>
+  </ScreenSizeItem>
+  <ScreenSizeItem>
+    <Name>12.3" (3:2)</Name>
+    <Width>259.20</Width>
+    <Height>172.80</Height>
+  </ScreenSizeItem>
+  <ScreenSizeItem>
+    <Name>13.3" (16:9)</Name>
+    <Width>294.44</Width>
+    <Height>165.62</Height>
+  </ScreenSizeItem>
+  <ScreenSizeItem>
+    <Name>14" (16:9)</Name>
+    <Width>309.90</Width>
+    <Height>174.50</Height>
+  </ScreenSizeItem>
+  <ScreenSizeItem>
+    <Name>15.6" (16:9)</Name>
+    <Width>345.35</Width>
+    <Height>194.26</Height>
+  </ScreenSizeItem>
+  <ScreenSizeItem>
+    <Name>17.3" (16:9)</Name>
+    <Width>382.99</Width>
+    <Height>232.89</Height>
+  </ScreenSizeItem>
+  <ScreenSizeItem>
+    <Name>AutoSet</Name>
+  </ScreenSizeItem>
+</DocumentElement>

@@ -1,0 +1,1083 @@
+<TestItemSet>
+  <AutoTuning_SET>
+    <ProjectName value="">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </ProjectName>
+    <USB_VID value="04F3">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </USB_VID>
+    <USB_PID value="0">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </USB_PID>
+    <ScreenSizeWidth value="294">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </ScreenSizeWidth>
+    <ScreenSizeHeight value="166">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </ScreenSizeHeight>
+    <PatternType value="1" type="ComboBox">
+      <Data value="0,1,2,3,4" />
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </PatternType>
+    <BackLightValue value="-1">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </BackLightValue>
+    <FRPH1TestFrame value="100">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </FRPH1TestFrame>
+    <FRPH1UniformityLB value="-1">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </FRPH1UniformityLB>
+    <FRPH2ADCTestFrame value="1000">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </FRPH2ADCTestFrame>
+    <PatternPicPath value="">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </PatternPicPath>
+    <IdealScanTime value="120">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </IdealScanTime>
+    <FRPH2ACFRBestRankNumber value="20">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </FRPH2ACFRBestRankNumber>
+    <SocketType value="Android(RemoteClient)" type="ComboBox">
+      <Data value="Windows,Android(RemoteClient),Android(ARM_Tool)" />
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </SocketType>
+    <AndroidSocketType value="Client" type="ComboBox">
+      <Data value="Client,Server" />
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </AndroidSocketType>
+    <Port value="9344">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </Port>
+    <AfUpdateSHFileDelayTime value="1000">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </AfUpdateSHFileDelayTime>
+    <KeepWakeUpIntervalTime value="10000">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </KeepWakeUpIntervalTime>
+    <DeviceConnectTestCount value="10">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </DeviceConnectTestCount>
+    <FRPH2DataType value="0" type="ComboBox">
+      <Data value="0,1,2" />
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </FRPH2DataType>
+    <FRPH2DVTestFrame value="1000">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </FRPH2DVTestFrame>
+    <DisableTxn_Scan value="0" type="ComboBox">
+      <Data value="0,1" />
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </DisableTxn_Scan>
+    <FingerReportTest value="0" type="ComboBox">
+      <Data value="0,1" />
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </FingerReportTest>
+    <FRPH2NormalizeType value="1" type="ComboBox">
+      <Data value="0,1" />
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </FRPH2NormalizeType>
+    <SaveNormalRawDataType value="0" type="ComboBox">
+      <Data value="0,1" />
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </SaveNormalRawDataType>
+    <ChromeGetDataRetryCount value="11">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </ChromeGetDataRetryCount>
+    <ChromeGetDataTimeout value="10000">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </ChromeGetDataTimeout>
+    <ChromeGetDataDelayTime value="1000">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </ChromeGetDataDelayTime>
+    <FRPH1FixedPH1 value="10">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </FRPH1FixedPH1>
+    <FRPH1ScanFreqLB value="80.0">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </FRPH1ScanFreqLB>
+    <FRPH1ScanFreqHB value="250.0">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </FRPH1ScanFreqHB>
+    <ACFRADCTestFrame value="1000">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </ACFRADCTestFrame>
+    <ACFRModeType value="1" type="ComboBox">
+      <Data value="0,1" />
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </ACFRModeType>
+    <ACFRSaveAnalysisData value="1" type="ComboBox">
+      <Data value="0,1,2" />
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </ACFRSaveAnalysisData>
+    <ACFRSignalAreaPtg_Hor value="60">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </ACFRSignalAreaPtg_Hor>
+    <ACFRSignalAreaPtg_Ver value="60">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </ACFRSignalAreaPtg_Ver>
+    <ACFRNonSignalAreaPtg value="30.0">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </ACFRNonSignalAreaPtg>
+    <ACFRMultiFrameCount_Hor value="10">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </ACFRMultiFrameCount_Hor>
+    <GetDataTimeout value="1000">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </GetDataTimeout>
+    <CustomizeScreenColor value="255,255,255" type="Button">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </CustomizeScreenColor>
+    <FRPH1LimitHB value="70">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </FRPH1LimitHB>
+    <GenerateH5FileData value="0" type="ComboBox">
+      <Data value="0,1,2" />
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </GenerateH5FileData>
+    <KeepDoNotReset value="1" type="ComboBox">
+      <Data value="0,1" />
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </KeepDoNotReset>
+    <EnableSetSum value="0" type="ComboBox">
+      <Data value="0,1" />
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </EnableSetSum>
+    <DisableReK value="0" type="ComboBox">
+      <Data value="0,1" />
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </DisableReK>
+    <DisableReset value="0" type="ComboBox">
+      <Data value="0,1" />
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </DisableReset>
+    <DisableSetFWOption value="0" type="ComboBox">
+      <Data value="0,1" />
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </DisableSetFWOption>
+    <DisableSetAnalogParameter value="0" type="ComboBox">
+      <Data value="0,1" />
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </DisableSetAnalogParameter>
+    <InterfaceType value="HIDOverI2C" type="ComboBox">
+      <Data value="HIDOverI2C,I2C,USB,SPI(MA_Rising_Half),SPI(MA_Rising),SPI(MA_Falling_Half),SPI(MA_Falling)" />
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </InterfaceType>
+    <I2CAddress value="20">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </I2CAddress>
+    <CommandScriptType value="0" type="ComboBox">
+      <Data value="0,1,2" />
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </CommandScriptType>
+    <UserDefinedFilePath value="">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </UserDefinedFilePath>
+    <SelfFSTestFrame value="100">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </SelfFSTestFrame>
+    <SelfFSSum value="-1">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </SelfFSSum>
+    <EnableContinueFlow value="0" type="ComboBox">
+      <Data value="0,1" />
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </EnableContinueFlow>
+    <FRPH2ComputeRXTraceReference value="0" type="ComboBox">
+      <Data value="0,1" />
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </FRPH2ComputeRXTraceReference>
+    <SelfFSGetKValue value="1" type="ComboBox">
+      <Data value="0,1" />
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </SelfFSGetKValue>
+    <FRPH2PenEffectRXTrace value="0">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </FRPH2PenEffectRXTrace>
+    <SelfFSGetDataType value="1" type="ComboBox">
+      <Data value="0,1" />
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </SelfFSGetDataType>
+    <SelfFSGetReportTimeout value="120000">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </SelfFSGetReportTimeout>
+    <Gen8SendCommandDelayTime value="100">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </Gen8SendCommandDelayTime>
+    <Gen8GetDataDelayTime value="0">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </Gen8GetDataDelayTime>
+    <SelfFSReportNumber value="10000">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </SelfFSReportNumber>
+    <RunMultiTest value="0" type="ComboBox">
+      <Data value="0,1" />
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </RunMultiTest>
+    <SelfFSGain value="-1">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </SelfFSGain>
+    <DisableDisconnect value="0" type="ComboBox">
+      <Data value="0,1" />
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </DisableDisconnect>
+    <SelfFSReportSignedValue value="2" type="ComboBox">
+      <Data value="0,1,2" />
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </SelfFSReportSignedValue>
+    <SelfFPStandardPH1PH2Sum value="111">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </SelfFPStandardPH1PH2Sum>
+    <SelfFPStandardSum value="128">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </SelfFPStandardSum>
+    <SelfFPPH2_LMT_LB value="160">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </SelfFPPH2_LMT_LB>
+    <SelfFSGetSignalReport value="0" type="ComboBox">
+      <Data value="0,1" />
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </SelfFSGetSignalReport>
+    <SelfFSRepeatCount value="0">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </SelfFSRepeatCount>
+    <SelfFSGetReportType value="0" type="ComboBox">
+      <Data value="0,1,2" />
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </SelfFSGetReportType>
+    <SelfFSGetReportByte value="1" type="ComboBox">
+      <Data value="1,2,3,4,5" />
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </SelfFSGetReportByte>
+    <SelfFSGetReportSequence value="0" type="ComboBox">
+      <Data value="0,1,2,3" />
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </SelfFSGetReportSequence>
+    <SelfFSRunKSequence value="0" type="ComboBox">
+      <Data value="0,1,2,3" />
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </SelfFSRunKSequence>
+    <SelfFSNCPValueLB value="0">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </SelfFSNCPValueLB>
+    <SelfFSNCPValueHB value="31">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </SelfFSNCPValueHB>
+    <Gen8JustSetSelfNCPNCN value="0" type="ComboBox">
+      <Data value="0,1" />
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </Gen8JustSetSelfNCPNCN>
+    <SelfFSNCNValueLB value="0">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </SelfFSNCNValueLB>
+    <SelfFSNCNValueHB value="31">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </SelfFSNCNValueHB>
+    <ACFRSNRMethodType value="1" type="ComboBox">
+      <Data value="0,1" />
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </ACFRSNRMethodType>
+    <SelfPNSTestFrame value="10">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </SelfPNSTestFrame>
+    <SelfPNSGetKValue value="1" type="ComboBox">
+      <Data value="0,1" />
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </SelfPNSGetKValue>
+    <SelfPNSNCPNCNValueLB value="0">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </SelfPNSNCPNCNValueLB>
+    <SelfPNSNCPNCNValueHB value="31">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </SelfPNSNCPNCNValueHB>
+    <SelfPNS_MS_MM_RX0Count value="42">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </SelfPNS_MS_MM_RX0Count>
+    <SelfPNSStartTrace value="1">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </SelfPNSStartTrace>
+    <SelfFSDisplayWarning value="1" type="ComboBox">
+      <Data value="0,1" />
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </SelfFSDisplayWarning>
+    <SelfFSRunCALData value="0" type="ComboBox">
+      <Data value="0,1,2" />
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </SelfFSRunCALData>
+    <SelfFSCALValue value="15">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </SelfFSCALValue>
+    <ACFRGetSignalAreaMethod value="1" type="ComboBox">
+      <Data value="1,2,3" />
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </ACFRGetSignalAreaMethod>
+    <ACFRSignalRXStartTrace value="0">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </ACFRSignalRXStartTrace>
+    <ACFRSignalRXEndTrace value="0">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </ACFRSignalRXEndTrace>
+    <ACFRSignalTXStartTrace value="0">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </ACFRSignalTXStartTrace>
+    <ACFRSignalTXEndTrace value="0">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </ACFRSignalTXEndTrace>
+    <SelfFSCALStartTrace value="1">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </SelfFSCALStartTrace>
+    <SelfFSCALStartTraceNumber value="0">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </SelfFSCALStartTraceNumber>
+    <SelfFSCALEndTraceNumber value="0">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </SelfFSCALEndTraceNumber>
+    <GetParameterTimeout value="1000">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </GetParameterTimeout>
+    <SelfFS_MS_MM_RX0FileName value="">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </SelfFS_MS_MM_RX0FileName>
+    <SelfFSCAG value="-1">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </SelfFSCAG>
+    <SelfFSIQ_BSH value="-1">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </SelfFSIQ_BSH>
+    <SelfTraceType value="0" type="ComboBox">
+      <Data value="0,1" />
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </SelfTraceType>
+    <EnableCheckUserDefinedFormat value="0" type="ComboBox">
+      <Data value="0,1" />
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </EnableCheckUserDefinedFormat>
+    <Gen8GetACKTimeout value="1000">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </Gen8GetACKTimeout>
+    <Gen8SetUpdateBaseType value="5" type="ComboBox">
+      <Data value="0,1,2,3,4,5" />
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </Gen8SetUpdateBaseType>
+    <Gen8UpdateBaseDelayTime value="1500">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </Gen8UpdateBaseDelayTime>
+    <Gen8ReadBulkRAMDataValue value="-1">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </Gen8ReadBulkRAMDataValue>
+    <Gen8SetTransferTestModeViaHID value="1" type="ComboBox">
+      <Data value="0,1" />
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </Gen8SetTransferTestModeViaHID>
+    <Gen8GetBaseUseSkipFrame value="0" type="ComboBox">
+      <Data value="0,1" />
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </Gen8GetBaseUseSkipFrame>
+    <Gen8SetGetDataInfoType value="1" type="ComboBox">
+      <Data value="0,1" />
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </Gen8SetGetDataInfoType>
+    <Gen8GetFirstBaseDelay value="0" type="ComboBox">
+      <Data value="0,1" />
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </Gen8GetFirstBaseDelay>
+    <Gen8ReconnectDelayTime value="3000">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </Gen8ReconnectDelayTime>
+    <NormalDelayTime value="0">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </NormalDelayTime>
+    <SPICommandLength value="10">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </SPICommandLength>
+    <DVDD value="3.3V" type="ComboBox">
+      <Data value="2.8V,3.0V,3.3V,5.0V" />
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </DVDD>
+    <VIO value="3.3V" type="ComboBox">
+      <Data value="1.8V,2.8V,3.0V,3.3V,5.0V" />
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </VIO>
+    <NormalLength value="3F">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </NormalLength>
+    <Gen8GetBaseType value="0" type="ComboBox">
+      <Data value="0,1,2,3,4" />
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </Gen8GetBaseType>
+    <Gen8UseADCForBaseFrame value="10">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </Gen8UseADCForBaseFrame>
+    <Gen8GetFirstBaseDelayTime value="5000">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </Gen8GetFirstBaseDelayTime>
+    <SkipFrame value="20">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </SkipFrame>
+    <ACFRUseBaseDifferEdgeDetectMethod value="1" type="ComboBox">
+      <Data value="1,2" />
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </ACFRUseBaseDifferEdgeDetectMethod>
+    <ACFRUseTotalDataGetSignalTrace value="0" type="ComboBox">
+      <Data value="0,1" />
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </ACFRUseTotalDataGetSignalTrace>
+    <ACFRFilterMaskType value="8" type="ComboBox">
+      <Data value="1,2,3,4,5,6,7,8,9" />
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </ACFRFilterMaskType>
+    <Gen8DisablePenFunction value="2" type="ComboBox">
+      <Data value="0,1,2" />
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </Gen8DisablePenFunction>
+    <Gen8GetAnalogAfterSwitchTestMode value="1" type="ComboBox">
+      <Data value="0,1" />
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </Gen8GetAnalogAfterSwitchTestMode>
+    <PHCKGrayLineColor value="144,144,144" type="Button">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </PHCKGrayLineColor>
+    <Gen8SetPenFunctionDelayTime value="2000">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </Gen8SetPenFunctionDelayTime>
+    <FRPH1FrequencySortType value="0" type="ComboBox">
+      <Data value="0,1" />
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </FRPH1FrequencySortType>
+    <ACFRThresholdStdRatio value="1.0">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </ACFRThresholdStdRatio>
+    <UseICSolutionType_9F07 value="1" type="ComboBox">
+      <Data value="0,1" />
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </UseICSolutionType_9F07>
+    <NormalDelayTime_9F07 value="100">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </NormalDelayTime_9F07>
+    <ExitTestModeDelayTime_9F07 value="1000">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </ExitTestModeDelayTime_9F07>
+    <Gen8SetDCDCEnable value="-1" type="ComboBox">
+      <Data value="-1,0,1" />
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </Gen8SetDCDCEnable>
+    <RawADCSSELCLB value="2" type="ComboBox">
+      <Data value="0,1,2,3" />
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </RawADCSSELCLB>
+    <RawADCSSELCHB value="3" type="ComboBox">
+      <Data value="0,1,2,3" />
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </RawADCSSELCHB>
+    <RawADCSVSELLB_Gen8 value="0" type="ComboBox">
+      <Data value="0,1,2,3" />
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </RawADCSVSELLB_Gen8>
+    <RawADCSVSELHB_Gen8 value="0" type="ComboBox">
+      <Data value="0,1,2,3" />
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </RawADCSVSELHB_Gen8>
+    <RawADCSVSELLB_7318 value="2" type="ComboBox">
+      <Data value="0,1,2,3" />
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </RawADCSVSELLB_7318>
+    <RawADCSVSELHB_7318 value="3" type="ComboBox">
+      <Data value="0,1,2,3" />
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </RawADCSVSELHB_7318>
+    <RawADCSVSELLB_7315 value="3" type="ComboBox">
+      <Data value="0,1,2,3" />
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </RawADCSVSELLB_7315>
+    <RawADCSVSELHB_7315 value="3" type="ComboBox">
+      <Data value="0,1,2,3" />
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </RawADCSVSELHB_7315>
+    <RawADCSVSELLB_6315 value="3" type="ComboBox">
+      <Data value="0,1,2,3" />
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </RawADCSVSELLB_6315>
+    <RawADCSVSELHB_6315 value="3" type="ComboBox">
+      <Data value="0,1,2,3" />
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </RawADCSVSELHB_6315>
+    <RawADCSLGLB value="0" type="ComboBox">
+      <Data value="0,1,2" />
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </RawADCSLGLB>
+    <RawADCSLGHB value="2" type="ComboBox">
+      <Data value="0,1,2" />
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </RawADCSLGHB>
+    <RawADCSSELGMLB value="0" type="ComboBox">
+      <Data value="0,1" />
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </RawADCSSELGMLB>
+    <RawADCSSELGMHB value="1" type="ComboBox">
+      <Data value="0,1" />
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </RawADCSSELGMHB>
+    <RawADCSADCTestFrame value="10">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </RawADCSADCTestFrame>
+    <RawADCSGen7EnableHWTXN value="0" type="ComboBox">
+      <Data value="0,1" />
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </RawADCSGen7EnableHWTXN>
+    <RawADCSGen6or7EnableFWTX4 value="0" type="ComboBox">
+      <Data value="0,1" />
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </RawADCSGen6or7EnableFWTX4>
+    <RawADCSFitADCLB value="3000">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </RawADCSFitADCLB>
+    <RawADCSFitADCHB value="6000">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </RawADCSFitADCHB>
+    <AndroidDisableGetReport value="0" type="ComboBox">
+      <Data value="0,1" />
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </AndroidDisableGetReport>
+    <DisableSetSPICommandLength value="0" type="ComboBox">
+      <Data value="0,1" />
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </DisableSetSPICommandLength>
+    <EnableUseNewMethod value="1" type="ComboBox">
+      <Data value="0,1" />
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </EnableUseNewMethod>
+    <RawADCSGen8FixedFIRCOEF_SEL value="0">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </RawADCSGen8FixedFIRCOEF_SEL>
+    <RawADCSGen6or7FixedFIRTB value="16384">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </RawADCSGen6or7FixedFIRTB>
+    <RawADCSFixedFIR_TAP_NUM value="1">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </RawADCSFixedFIR_TAP_NUM>
+    <RawADCSTPReg_Offset_7318 value="9000">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </RawADCSTPReg_Offset_7318>
+    <RawADCSTPReg_Offset_7315 value="8000">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </RawADCSTPReg_Offset_7315>
+    <RawADCSTPReg_Offset_6315 value="8000">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </RawADCSTPReg_Offset_6315>
+    <FRPH2ChartReferenceValueHB value="0">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </FRPH2ChartReferenceValueHB>
+    <FRPH2ChartReferenceValueLB value="0">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </FRPH2ChartReferenceValueLB>
+    <FRPH2ChartReferenceValueInterval value="0">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </FRPH2ChartReferenceValueInterval>
+    <ACFRChartSNRValueHB value="0">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </ACFRChartSNRValueHB>
+    <ACFRChartSNRValueLB value="0">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </ACFRChartSNRValueLB>
+    <ACFRChartSNRValueInterval value="0">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </ACFRChartSNRValueInterval>
+    <SSHSocketServerRemoteClientIPAddress value="10.11.99.1">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </SSHSocketServerRemoteClientIPAddress>
+    <SSHSocketServerUserName value="root">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </SSHSocketServerUserName>
+    <SSHSocketServerPassword value="wvwhBnPynK">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </SSHSocketServerPassword>
+    <SSHSocketServerNormalDelayTime value="500">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </SSHSocketServerNormalDelayTime>
+    <SSHSocketServerGetDataTimeout value="5000">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </SSHSocketServerGetDataTimeout>
+    <SSHSocketServerGetParameterTimeout value="2000">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </SSHSocketServerGetParameterTimeout>
+    <FRPH2ACFRGetBaseType value="0" type="ComboBox">
+      <Data value="0,1,2,3,4" />
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </FRPH2ACFRGetBaseType>
+    <DisableUpdateBase value="0" type="ComboBox">
+      <Data value="0,1" />
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </DisableUpdateBase>
+    <FRPH2ACFRGetBaseUseSkipFrame value="0" type="ComboBox">
+      <Data value="0,1" />
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </FRPH2ACFRGetBaseUseSkipFrame>
+    <FRPH2ACFRUseADCForBaseFrame value="10">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </FRPH2ACFRUseADCForBaseFrame>
+    <ReadBulkRAMDataValueExtraDelayTime value="1000">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </ReadBulkRAMDataValueExtraDelayTime>
+    <DisableIdleMode value="0" type="ComboBox">
+      <Data value="0,1" />
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </DisableIdleMode>
+    <DisablePen_Scan value="0" type="ComboBox">
+      <Data value="0,1" />
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </DisablePen_Scan>
+    <DisableAddADCOffset value="0" type="ComboBox">
+      <Data value="0,1" />
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </DisableAddADCOffset>
+    <FRPH2RecordRecentADCMeanForBase value="0" type="ComboBox">
+      <Data value="0,1" />
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </FRPH2RecordRecentADCMeanForBase>
+    <FRPH2RecentADCMeanForBaseFrameNumber value="10">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </FRPH2RecentADCMeanForBaseFrameNumber>
+    <SSHSocketServerDebugMode value="0" type="ComboBox">
+      <Data value="0,1" />
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </SSHSocketServerDebugMode>
+    <ChromeSSHSocketServerRemoteClientIPAddress value="192.168.0.1">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </ChromeSSHSocketServerRemoteClientIPAddress>
+    <ChromeSSHSocketServerUserName value="root">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </ChromeSSHSocketServerUserName>
+    <ChromeSSHSocketServerPassword value="test0000">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </ChromeSSHSocketServerPassword>
+    <ChromeSSHSocketServerDebugMode value="0" type="ComboBox">
+      <Data value="0,1" />
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </ChromeSSHSocketServerDebugMode>
+    <IgnoreAnomalyUniformity value="1" type="ComboBox">
+      <Data value="0,1" />
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </IgnoreAnomalyUniformity>
+	<ReKTimeout value="8000">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </ReKTimeout>
+	<SkipFRPH1Step value="0" type="ComboBox">
+      <Data value="0,1" />
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </SkipFRPH1Step>
+	<ManualFixedPH1 value="10">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </ManualFixedPH1>
+	<ManualMinimumPH2 value="10">
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </ManualMinimumPH2>
+	<ManualEnableTXn value="0" type="ComboBox">
+      <Data value="0,1" />
+      <ReadOnly value="0" />
+      <GuestVisible value="1" />
+      <TRD2Visible value="1" />
+    </ManualEnableTXn>
+  </AutoTuning_SET>
+  <TEST_ITEM>
+    <FrequencyRank_Phase1 value="1" />
+    <FrequencyRank_Phase2 value="0" />
+    <AC_FrequencyRank value="0" />
+    <Raw_ADC_Sweep value="0" />
+    <Self_FrequencySweep value="0" />
+    <Self_NCPNCNSweep value="0" />
+  </TEST_ITEM>
+</TestItemSet>

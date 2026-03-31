@@ -1,0 +1,401 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{54C7AF1B-E89E-4EA1-ABC4-C823A686AC8E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MPPPenAutoTuning</RootNamespace>
+    <AssemblyName>MPPPenAutoTuning</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <!-- CS1685: ExtensionAttribute 同時定義於 mscorlib.dll 與 System.Core.dll，屬已知無害警告，予以抑制 -->
+    <NoWarn>1685</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;_USE_VC2010</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;_USE_VC2010</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Elan.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release_9F07_Socket|x86'">
+    <OutputPath>bin\Release_9F07_Socket\</OutputPath>
+    <DefineConstants>TRACE;_USE_VC2010;_USE_9F07_SOCKET</DefineConstants>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EPPlus, Version=6.2.6.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EPPlus.6.2.6\lib\net462\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus.Interfaces, Version=6.1.1.0, Culture=neutral, PublicKeyToken=a694d7f3b0907a61, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EPPlus.Interfaces.6.1.1\lib\net462\EPPlus.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus.System.Drawing, Version=6.1.1.0, Culture=neutral, PublicKeyToken=2308d35469c9bac0, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EPPlus.System.Drawing.6.1.1\lib\net462\EPPlus.System.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="FontAwesome.Sharp, Version=5.15.4.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\FontAwesome.Sharp.5.15.4\lib\net45\FontAwesome.Sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="MathNet.Numerics, Version=4.5.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\AutoTuning_NewUI\bin\Debug\MathNet.Numerics.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IO.RecyclableMemoryStream, Version=1.4.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.IO.RecyclableMemoryStream.1.4.1\lib\net46\Microsoft.IO.RecyclableMemoryStream.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\AutoTuning_NewUI\bin\Debug\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="Redmine.Net.Api">
+      <HintPath>..\..\AutoTuning_NewUI\bin\Debug\Redmine.Net.Api.dll</HintPath>
+    </Reference>
+    <Reference Include="RJCodeAdvance.RJControls, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\RJCodeAdvance.RJControls.1.0.0\lib\net45\RJCodeAdvance.RJControls.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Threading.Tasks" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AnalysisFlow\AnalysisFlow_DigiGainTuning.cs" />
+    <Compile Include="AnalysisFlow\AnalysisFlow_Else.cs" />
+    <Compile Include="AnalysisFlow\AnalysisFlow_LinearityTable.cs" />
+    <Compile Include="AnalysisFlow\AnalysisFlow_Noise.cs" />
+    <Compile Include="AnalysisFlow\AnalysisFlow_Noise_Gen8.cs" />
+    <Compile Include="AnalysisFlow\AnalysisFlow_Noise_TestMode.cs" />
+    <Compile Include="AnalysisFlow\AnalysisFlow_PeakCheck.cs" />
+    <Compile Include="AnalysisFlow\AnalysisFlow_PressureProtect.cs" />
+    <Compile Include="AnalysisFlow\AnalysisFlow_PressureSetting.cs" />
+    <Compile Include="AnalysisFlow\AnalysisFlow_TiltNoise.cs" />
+    <Compile Include="AnalysisFlow\AnalysisFlow_TiltNoise_Gen8.cs" />
+    <Compile Include="AnalysisFlow\AnalysisFlow_TiltTuning.cs" />
+    <Compile Include="AnalysisFlow\AnalysisFlow_TPGainTuning.cs" />
+    <Compile Include="Class\ComputeDFT_NUMAndCoefficient.cs" />
+    <Compile Include="Class\ElanCommand_Gen8.cs" />
+    <Compile Include="Class\ElanTouch.cs" />
+    <Compile Include="Class\GoDrawAPI.cs" />
+    <Compile Include="Class\GetFrameData\GetFrameData.cs" />
+    <Compile Include="Class\GetFrameData\ElanDefine.cs" />
+    <Compile Include="Class\GetFrameData\FrameMgr.cs" />
+    <Compile Include="Class\GetFrameData\UserInterfaceDefine.cs" />
+    <Compile Include="ConnectFlow.cs" />
+    <Compile Include="clsListViewEdit.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Class\Algorithm\PressureAlgorithm.cs" />
+    <Compile Include="Class\DataAnalysis.cs" />
+    <Compile Include="AnalysisFlow\AnalysisFlow_PressureTable.cs" />
+    <Compile Include="Class\API\RS232.cs" />
+    <Compile Include="Class\BlockingQueue.cs" />
+    <Compile Include="Class\RegisterValue.cs" />
+    <Compile Include="Class\ElanConvert.cs" />
+    <Compile Include="Class\ElanTouch_Old_1.cs" />
+    <Compile Include="Class\HW\HW_ForceGauge_SHIMPO_FGP05.cs" />
+    <Compile Include="Class\HW\HW_LT_DT_500F.cs" />
+    <Compile Include="Class\FileProcess.cs" />
+    <Compile Include="Class\InputDevice.cs" />
+    <Compile Include="Class\MathMethod.cs" />
+    <Compile Include="Class\ServerSocketAPI.cs" />
+    <Compile Include="Class\SocketAPI.cs" />
+    <Compile Include="Class\ElanCommand.cs" />
+    <Compile Include="Class\StringConvert.cs" />
+    <Compile Include="Class\Win32API.cs" />
+    <Compile Include="ctrlTestItemCheckBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrlTestItemCheckBox.Designer.cs">
+      <DependentUpon>ctrlTestItemCheckBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AnalysisFlow\AnalysisFlow_DTNormal.cs" />
+    <Compile Include="AnalysisFlow\AnalysisFlow_DTTRxS.cs" />
+    <Compile Include="frmDFT_NUMAndCoeffConverter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDFT_NUMAndCoeffConverter.Designer.cs">
+      <DependentUpon>frmDFT_NUMAndCoeffConverter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFeedback.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFeedback.Designer.cs">
+      <DependentUpon>frmFeedback.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFeedbackParameterSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFeedbackParameterSetting.Designer.cs">
+      <DependentUpon>frmFeedbackParameterSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGoDrawController.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGoDrawController.Designer.cs">
+      <DependentUpon>frmGoDrawController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.EventHandlers.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Parameters.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFlowSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFlowSetting.Designer.cs">
+      <DependentUpon>frmFlowSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFolderSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFolderSelect.Designer.cs">
+      <DependentUpon>frmFolderSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFrequencySetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFrequencySetting.Designer.cs">
+      <DependentUpon>frmFrequencySetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFullScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFullScreen.Designer.cs">
+      <DependentUpon>frmFullScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMessageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMessageBox.Designer.cs">
+      <DependentUpon>frmMessageBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmParameterSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmParameterSetting.Designer.cs">
+      <DependentUpon>frmParameterSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPHCKPattern.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPHCKPattern.Designer.cs">
+      <DependentUpon>frmPHCKPattern.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPHCKPatternOption.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPHCKPatternOption.Designer.cs">
+      <DependentUpon>frmPHCKPatternOption.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRedmineTask.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRedmineTask.designer.cs">
+      <DependentUpon>frmRedmineTask.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmResultChart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmResultChart.Designer.cs">
+      <DependentUpon>frmResultChart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Class\LogAPI.cs" />
+    <Compile Include="frmStepSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStepSetting.Designer.cs">
+      <DependentUpon>frmStepSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Class\CheckFlowFile.cs" />
+    <Compile Include="frmSummerizeLogData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSummerizeLogData.Designer.cs">
+      <DependentUpon>frmSummerizeLogData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmWarningMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmWarningMessage.Designer.cs">
+      <DependentUpon>frmWarningMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmWarningMessage_2Selection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmWarningMessage_2Selection.Designer.cs">
+      <DependentUpon>frmWarningMessage_2Selection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interface\IHardware.cs" />
+    <Compile Include="Interface\IRS232Device.cs" />
+    <Compile Include="ProcessFlow_ClientMode.cs" />
+    <Compile Include="ProcessFlow_GoDrawMode.cs" />
+    <Compile Include="ProcessFlow_CommonFunction.cs" />
+    <Compile Include="ParameterBase.cs" />
+    <Compile Include="Class\GetPressureTable.cs" />
+    <Compile Include="ProcessFlow_LoadDataMode.cs" />
+    <Compile Include="ProcessFlow_MainFlow.cs" />
+    <Compile Include="ProcessFlow_ServerMode.cs" />
+    <Compile Include="ProcessFlow_SingleMode.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="ParameterProperties.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Class\RobotAPI.cs" />
+    <Compile Include="AnalysisFlow\AnalysisFlow_Raw.cs" />
+    <Compile Include="Class\RecordFlowInfo.cs" />
+    <Compile Include="Class\RecordSetInfo.cs" />
+    <Compile Include="RedmineProcess.cs" />
+    <EmbeddedResource Include="ctrlTestItemCheckBox.resx">
+      <DependentUpon>ctrlTestItemCheckBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDFT_NUMAndCoeffConverter.resx">
+      <DependentUpon>frmDFT_NUMAndCoeffConverter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFeedback.resx">
+      <DependentUpon>frmFeedback.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFeedbackParameterSetting.resx">
+      <DependentUpon>frmFeedbackParameterSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGoDrawController.resx">
+      <DependentUpon>frmGoDrawController.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFlowSetting.resx">
+      <DependentUpon>frmFlowSetting.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFolderSelect.resx">
+      <DependentUpon>frmFolderSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFrequencySetting.resx">
+      <DependentUpon>frmFrequencySetting.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFullScreen.resx">
+      <DependentUpon>frmFullScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMessageBox.resx">
+      <DependentUpon>frmMessageBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmParameterSetting.resx">
+      <DependentUpon>frmParameterSetting.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPHCKPattern.resx">
+      <DependentUpon>frmPHCKPattern.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPHCKPatternOption.resx">
+      <DependentUpon>frmPHCKPatternOption.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRedmineTask.resx">
+      <DependentUpon>frmRedmineTask.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmResultChart.resx">
+      <DependentUpon>frmResultChart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStepSetting.resx">
+      <DependentUpon>frmStepSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSummerizeLogData.resx">
+      <DependentUpon>frmSummerizeLogData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmWarningMessage.resx">
+      <DependentUpon>frmWarningMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmWarningMessage_2Selection.resx">
+      <DependentUpon>frmWarningMessage_2Selection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Elan.ico" />
+    <None Include="Resources\forbidden_2.png" />
+    <None Include="Resources\play.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

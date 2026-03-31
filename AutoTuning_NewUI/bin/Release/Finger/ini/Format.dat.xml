@@ -1,0 +1,195 @@
+﻿Test Item Description, Test Item Name, Index, Group Name, Param Name, Show Param Text, Type, Default value,Detail Description, Visible, Hex
+Parameter Setting,AutoTuning SET,0,Commom Setting,ProjectName,ProjectName,String,0,設定計畫名稱及註解,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Commom Setting,USB_VID,USB_VID(Hex),Int32,0,設定裝置的VID，若無指定則填寫為04F3,TRUE,TRUE
+Parameter Setting,AutoTuning SET,0,Commom Setting,USB_PID,USB_PID(Hex),Int32,0,設定裝置的PID，若無指定則填寫為0,TRUE,TRUE
+Parameter Setting,AutoTuning SET,0,Commom Setting,DVDD,DVDD,String,0,設定裝置的DVDD，預設為3.3V,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Commom Setting,VIO,VIO,String,0,設定裝置的VIO，預設為3.3V,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Commom Setting,I2CAddress,I2CAddress(Hex),Int32,0,設定裝置的I2C Address，為十六進制數值，若無指定則填寫為20,TRUE,TRUE
+Parameter Setting,AutoTuning SET,0,Commom Setting,NormalLength,NormalLength(Hex),Int32,0,設定裝置的Normal Length，為十六進制數值，若無指定則填寫為3F,TRUE,TRUE
+Parameter Setting,AutoTuning SET,0,Commom Setting,SocketType,SocketType,String,0,設定Socket連線使用種類  Windows:使用Windows系統  Android(RemoteClient):使用一般Android系統  Android(ARM_Tool):使用新版Android13系統  Chrome(SSHSocketServer):使用Chromebook系統搭配SSH Remote Socket連線  Chrome(RemoteClient):使用Chromebook系統搭配原本RemoteClient連線  OtherSSHSocketServer:使用特殊SSH Remote Socket連線,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Commom Setting,InterfaceType,InterfaceType,String,0,設定Interface種類,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Commom Setting,SPICommandLength,SPICommandLength,Int32,0,設定在使用SPI Interface時的Command固定長度，預設為10,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Commom Setting,Port,Port,Int32,0,設定Port,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Commom Setting,GetDataTimeout,GetDataTimeout(ms),Int32,0,設定Get Data的Timeout時間(ms),TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Commom Setting,GetParameterTimeout,GetParameterTimeout(ms),Int32,0,設定Get FW Parameter的Timeout時間(ms),TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Commom Setting,ReadBulkRAMDataValueExtraDelayTime,ReadBulkRAMDataValueExtraDelayTime(ms),Int32,0,設定Set Read Bulk RAM Data Value的額外延遲時間(ms),TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Commom Setting,NormalDelayTime,NormalDelayTime(ms),Int32,0,設定Command之間的延遲時間(ms)，若為0則使用預設延遲時間(10ms),TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Commom Setting,DeviceConnectTestCount,DeviceConnectTestCount,Int32,0,設定Socket種類為Chrome或Other SSH Socket Server時Send Command Test的次數,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Commom Setting,DisableSetSPICommandLength,DisableSetSPICommandLength,Int32,0,設定是否要關閉設定SPI Command長度  0:否  1:是,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Commom Setting,RunMultiTest,RunMultiTest,Int32,0,設定是否要執行多次的量測流程  0:否  1:是,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Android Setting,AndroidSocketType,AndroidSocketType,String,0,設定Socket種類為Android系統的Socket種類,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Android Setting,AfUpdateSHFileDelayTime,AfterUpdateSHFileDelayTime(ms),Int32,0,設定Socket種類為Android時UpdateSHFile後之延遲時間(ms),TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Android Setting,KeepWakeUpIntervalTime,KeepWakeUpIntervalTime(ms),Int32,0,設定Socket種類為Android時持續喚醒之間隔時間(ms),TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Android Setting,AndroidDisableGetReport,DisableGetReport,Int32,0,設定Socket種類為Android系統是否關閉讀取Report的執行緒，預設為0(否)  0:否，開啟  1:是，關閉,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Chrome Common Setting,ChromeGetDataRetryCount,ChromeGetDataRetryCount,Int32,0,設定Socket種類為Chrome(SSHSocketServer)或Chrome(Previously)時Get Data的Retry次數,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Chrome Common Setting,ChromeGetDataTimeout,ChromeGetDataTimeout(ms),Int32,0,設定Socket種類為Chrome(SSHSocketServer)或Chrome(Previously)時Get Data的Timeout時間(ms),TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Chrome Common Setting,ChromeGetDataDelayTime,ChromeGetDataDelayTime(ms),Int32,0,設定Socket種類為Chrome(SSHSocketServer)或Chrome(Previously)時Get Data Error後的延遲時間(ms),TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Chrome(SSHSocketServer) Setting,ChromeSSHSocketServerRemoteClientIPAddress,RemoteClientIPAddress,String,0,設定使用Chrome(SSHSocketServer)連線Remote Client的IP Address,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Chrome(SSHSocketServer) Setting,ChromeSSHSocketServerUserName,UserName,String,0,設定Socket種類為Chrome(SSHSocketServer)連線的使用者帳號,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Chrome(SSHSocketServer) Setting,ChromeSSHSocketServerPassword,Password,String,0,設定Socket種類為Chrome(SSHSocketServer)連線的密碼,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Chrome(SSHSocketServer) Setting,ChromeSSHSocketServerDebugMode,DebugMode,Int32,0,設定Socket種類為Chrome(SSHSocketServer)連線時是否開啟Debug Mode,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Other SSH Socket Server Setting,SSHSocketServerRemoteClientIPAddress,RemoteClientIPAddress,String,0,設定Socket種類為Other SSH Socket Server連線Remote Client的IP Address,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Other SSH Socket Server Setting,SSHSocketServerUserName,UserName,String,0,設定Socket種類為Other SSH Socket Server連線的使用者帳號,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Other SSH Socket Server Setting,SSHSocketServerPassword,Password,String,0,設定Socket種類為Other SSH Socket Server連線的密碼,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Other SSH Socket Server Setting,SSHSocketServerDebugMode,DebugMode,Int32,0,設定Socket種類為Other SSH Socket Server連線時是否開啟Debug Mode,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Other SSH Socket Server Setting,SSHSocketServerNormalDelayTime,NormalDelayTime,Int32,0,設定Socket種類為Other SSH Socket Server連線Command之間的延遲時間(ms)，若為0則使用預設延遲時間(10ms),TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Other SSH Socket Server Setting,SSHSocketServerGetDataTimeout,GetDataTimeout,Int32,0,設定使用Other SSH Socket Server連線Get Data的Timeout時間(ms),TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Other SSH Socket Server Setting,SSHSocketServerGetParameterTimeout,GetParameterTimeout,Int32,0,設定使用Other SSH Socket Server連線Get FW Parameter的Timeout時間(ms),TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Display Setting,ScreenSizeWidth,ScreenSizeWidth,Int32,0,當無法從EDID辨別尺寸時，則可重此參數自行設定顯示器寬度，單位為公厘(mm),TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Display Setting,ScreenSizeHeight,ScreenSizeHeight,Int32,0,當無法從EDID辨別尺寸時，則可重此參數自行設定顯示器高度，單位為公厘(mm),TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Display Setting,PatternType,PatternType,Int32,0,設定錄製Data時要顯示的螢幕顯示畫面  0:無  1:PHCK Pattern  2:黑色畫面  3:使用者自訂顏色  4:關閉顯示器,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Display Setting,CustomizeScreenColor,CustomizeScreenColor,String,0,設定使用者自訂的螢幕顯示畫面顏色(R,G,B格式),TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Display Setting,BackLightValue,BackLightValue,Int32,0,設定錄製Data時要顯示的螢幕亮度百分比值(-1~100)，設定為-1則不作調整,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Display Setting,PatternPicPath,PatternPicPath,String,0,設定Pattern圖檔路徑,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Display Setting,PHCKGrayLineColor,PHCKGrayLineColor,String,0,設定PHCK Pattern的灰色線條顏色(R,G,B格式),TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Gen8 Command Setting,CommandScriptType,CommandScriptType,Int32,0,設定Gen8 Command Script方式  0:只設定標準類比參數Command  1:設定標準類比參數Command以及使用者自定義CommandScript  2:只設定使用者自定義CommandScript,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Gen8 Command Setting,UserDefinedFilePath,UserDefinedFilePath,String,0,設定使用者自定義CommandScript檔案路徑,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Gen8 Command Setting,EnableCheckUserDefinedFormat,EnableCheckUserDefinedFormat,Int32,0,設定是否檢查確認使用者自定義CommandScript檔案內容格式  0:否  1:是,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Gen8 Setting,Gen8SendCommandDelayTime,SendCommandDelayTime(ms),Int32,0,設定Gen8讀寫Command的間隔延遲時間，單位為ms,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Gen8 Setting,Gen8GetACKTimeout,GetACKTimeout(ms),Int32,0,設定Gen8讀取ACK的最長時間，單位為ms,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Gen8 Setting,Gen8GetFirstBaseDelay,GetFirstBaseDelay,Int32,0,設定Gen8在讀取第一次Base Data時是否要先延遲一段時間  0:否  1:是,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Gen8 Setting,Gen8GetFirstBaseDelayTime,GetFirstBaseDelayTime(ms),Int32,0,設定Gen8在讀取第一次Base Data時使用GetFirstBaseDelay為1的延遲時間，單位為ms，預設為5000ms,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Gen8 Setting,Gen8GetDataDelayTime,GetDataDelayTime(ms),Int32,0,設定Gen8讀取資料前的延遲時間，單位為ms,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Gen8 Setting,Gen8JustSetSelfNCPNCN,JustSetSelfNCPNCN,Int32,0,是否只下Command設定Gen8的Self NCPNCN數值  0:否  1:是,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Gen8 Setting,Gen8GetBaseType,GetBaseType,Int32,0,使用Gen8時設定"FrequencyRank Phase2"階段以及"AC FrequencyRank"階段讀取Base Data的方式，預設為0的方式，0:先讀取Base再讀取ADC  1:先讀取ADC再讀取Base  2:先讀取ADC再利用讀取多張ADC計算平均值來替代Base  3:利用UseNewMethod方式讀取單張ADC來替代Base  4:利用讀取多張ADC計算平均值來替代Base再讀取ADC,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Gen8 Setting,Gen8SetUpdateBaseType,SetUpdateBaseType,Int32,0,是否下Command進行Gen8的UpdateBase流程種類  0:否  1:在進入TestMode執行Fast UpdateBase，再延遲UpdateBaseDelayTime後離開TestMode  2:在離開TestMode執行Fast UpdateBase，再延遲UpdateBaseDelayTime  3:在進入TestMode執行Fast UpdateBase，隨即離開TestMode再延遲UpdateBaseDelayTime  4:在兩次進入TestMode執行兩次Fast UpdateBase，再延遲UpdateBaseDelayTime後離開TestMode  5:離開TestMode執行Reset Base再讀取Base Frame Count確認Reset Base完成,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Gen8 Setting,Gen8UseADCForBaseFrame,UseADCForBaseFrame,Int32,0,使用Gen8時設定"FrequencyRank Phase2"階段以及"AC FrequencyRank"階段在使用GetBaseType為2及3(利用讀取多張ADC計算平均值來替代Base)的方式時要讀取的ADC Frame數，預設為10,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Gen8 Setting,Gen8UpdateBaseDelayTime,UpdateBaseDelayTime(ms),Int32,0,設定Gen8執行完Fast UpdateBase後的延遲時間，單位為ms，預設為1000ms,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Gen8 Setting,Gen8SetGetDataInfoType,SetGetDataInfoType,Int32,0,設定Gen8在讀取Test Mode Data前是否要設定Read_Bulk_RAM_Data與TransferTestModeViaHID等Command  0:否  1:是,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Gen8 Setting,Gen8ReadBulkRAMDataValue,ReadBulkRAMDataValue,Int32,0,設定Gen8的Read_Bulk_RAM_Data數值，預設為-1,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Gen8 Setting,Gen8SetTransferTestModeViaHID,SetTransferTestModeViaHID,Int32,0,是否下Command進行Gen8的TransferTestModeViaHID  0:否  1:是,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Gen8 Setting,Gen8GetBaseUseSkipFrame,GetBaseUseSkipFrame,Int32,0,使用Gen8時是否在讀取Base前先Skip ADC Frame  0:否  1:是,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Gen8 Setting,Gen8ReconnectDelayTime,ReconnectDelayTime(ms),Int32,0,使用Gen8時若發生重新連線時的延遲時間，單位為ms，預設為3000ms,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Gen8 Setting,Gen8DisablePenFunction,DisablePenFunction,Int32,0,使用Gen8時設定是否要關閉主動筆功能  0:否  1:是，在離開Test Mode關閉主動筆功能  2:是，在進入Test Mode關閉主動筆功能,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Gen8 Setting,Gen8SetPenFunctionDelayTime,SetPenFunctionDelayTime(ms),Int32,0,使用Gen8時設定要關閉主動筆功能時在下完Test Mode Command後的延遲時間，單位為ms，預設為2000ms,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Gen8 Setting,Gen8GetAnalogAfterSwitchTestMode,GetAnalogAfterSwitchTestMode,Int32,0,使用Gen8時設定在讀取FW Analog Parameter前是否先離開Test Mode再進入Test Mode  0:否  1:是,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Gen8 Setting,Gen8SetDCDCEnable,SetDCDCEnable,Int32,0,使用Gen8時設定是否要開啟或關閉DCDC功能，預設為-1不作動作  -1:不作動作  0:關閉DCDC  1:開啟DCDC,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Option Setting,DisableSetFWOption,DisableSetFWOption,Int32,0,設定是否關閉動態更改FW Option  0:否  1:是,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Option Setting,DisableSetAnalogParameter,DisableSetAnalogParameter,Int32,0,設定是否關閉動態更改FW Analog Parameter  0:否  1:是,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Option Setting,DisableIdleMode,DisableIdleMode,Int32,0,設定是否關閉Idle Mode  0:否  1:是,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Option Setting,DisableTxn_Scan,DisableTxn_Scan,Int32,0,設定是否關閉Txn_Scan  0:否  1:是,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Option Setting,DisableUpdateBase,DisableUpdateBase,Int32,0,設定是否關閉UpdateBase  0:否  1:是,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Option Setting,DisablePen_Scan,DisablePen_Scan,Int32,0,設定是否關閉Pen_Scan  0:否  1:是,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Option Setting,DisableAddADCOffset,DisableAddADCOffset,Int32,0,設定是否關閉AddADCOffset  0:否  1:是,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Option Setting,DisableReK,DisableReK,Int32,0,設定是否關閉ReK  0:否  1:是,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Option Setting,ReKTimeout,ReKTimeout,Int32,0,設定ReK的Timeout時間，單位為ms，預設為8000ms,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Option Setting,FingerReportTest,FingerReportTest,Int32,0,設定是否使用FingerReportTest  0:否  1:是,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Option Setting,SaveNormalRawDataType,SaveNormalRawDataType,Int32,0,設定是否錄製工程AP格式Data  0:否  1:是,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Option Setting,GenerateH5FileData,GenerateH5FileData,Int32,0,設定是否產生h5檔案格式的Data  0:否  1:Normal Test Mode(標準測試模式)會產生；而Load Data Mode(讀取資料模式)不會產生  2:Normal Test Mode(標準測試模式)與Load Data Mode(讀取資料模式)皆會產生,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Option Setting,KeepDoNotReset,KeepDoNotReset,Int32,0,設定在"AC FrequencyRank"階段結束前是否持續不執行Reset，直至按下提示視窗確認為止，才開始進行Reset(防止誤報點)  0:否  1:是,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Option Setting,DisableReset,DisableReset,Int32,0,設定是否關閉Reset  0:否  1:是,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Option Setting,EnableContinueFlow,EnableContinueFlow,Int32,0,設定是否繼續執行前次流程  0:否  1:是,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Option Setting,DisableDisconnect,DisableDisconnect,Int32,0,設定在流程結束後是否不執行斷電程序  0:否  1:是,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Option Setting,SkipFrame,SkipFrame,Int32,0,設定在讀取ADC或dV時要先忽略的Frame張數，預設為2張Frame,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Option Setting,EnableUseNewMethod,EnableUseNewMethod,Int32,0,設定讀取ADC Data方式，0:標準方式  1:使用UseNewMethod方式,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Option Setting,IgnoreAnomalyUniformity,IgnoreAnomalyUniformity,Int32,0,設定是否忽略計算出來的Uniformity值為異常狀況的判斷流程，預設為1  0:否，將Uniformity值為異常狀況判定為量測異常，終止量測流程  1:是，忽略Uniformity值為異常狀況,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,SUM Setting,IdealScanTime,IdealScanTime,Int32,0,設定用來計算建議SUM NUNBER的理想ScanTime,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,SUM Setting,EnableSetSum,EnableSetSum,Int32,0,設定是否用計算出來建議的SUM NUNBER進行讀取Data  0:否  1:是,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Skip FrequencyRank Phase1 Setting,SkipFRPH1Step,SkipFrequencyRankPhase1Step,Int32,0,設定是否忽略使用"FrequencyRank Phase1"階段，直接執行"FrequencyRank Phase2"或"AC FrequencyRank"階段  0:否  1:是,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Skip FrequencyRank Phase1 Setting,ManualFixedPH1,ManualFixedPH1(Hex),Int32,0,手動設定使用的PH1固定值，為16進制,TRUE,TRUE
+Parameter Setting,AutoTuning SET,0,Skip FrequencyRank Phase1 Setting,ManualMinimumPH2,ManualMinimumPH2(Hex),Int32,0,手動設定使用的PH2最小值，為16進制,TRUE,TRUE
+Parameter Setting,AutoTuning SET,0,Skip FrequencyRank Phase1 Setting,ManualEnableTXn,ManualEnableTXn,Int32,0,手動設定使用的TXn狀態，若FW是設定為開啟TXn則設定為1；若關閉TXn則設定為0,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,FrequencyRank Phase1 Step,FRPH1FixedPH1,FixedPH1(Hex),Int32,0,設定"FrequencyRank Phase1"階段之PH1固定值，為16進制,TRUE,TRUE
+Parameter Setting,AutoTuning SET,0,FrequencyRank Phase1 Step,FRPH1ScanFreqLB,ScanFreqLB,Double,0,設定"FrequencyRank Phase1"階段之掃名頻率下限值,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,FrequencyRank Phase1 Step,FRPH1ScanFreqHB,ScanFreqHB,Double,0,設定"FrequencyRank Phase1"階段之掃名頻率上限值,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,FrequencyRank Phase1 Step,FRPH1FrequencySortType,FrequencySortType,Int32,0,設定"FrequencyRank Phase1"階段之掃名頻率列表排序方式  0:逆向排序，頻率列表由高排至低  1:順向排序，頻率列表由低排至高,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,FrequencyRank Phase1 Step,FRPH1TestFrame,TestFrame,Int32,0,設定"FrequencyRank Phase1"階段之ADC Data Frame數,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,FrequencyRank Phase1 Step,FRPH1UniformityLB,UniformityLB,Double,0,設定"FrequencyRank Phase1"階段之充電飽和區Uniformity下限值，若設定<0則使用預設公式計算充電飽和區Uniformity下限值,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,FrequencyRank Phase1 Step,FRPH1LimitHB,LimitHB,Double,0,設定"FrequencyRank Phase1"階段之充電飽和區Uniformity極限值，若設定<0則使用此值當作公式計算充電飽和區Uniformity下限值,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,FrequencyRank Phase2 & AC FrequencyRank Step,FRPH2ACFRBestRankNumber,BestRankNumber,Int32,0,設定"FrequencyRank Phase2"階段最佳的前多少名頻率排名以及"AC FrequencyRank"階段使用前一階段"FrequencyRank Phase2"階段之最佳前多少名頻率排名進行錄製分析流程，預設為20,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,FrequencyRank Phase2 & AC FrequencyRank Step,FRPH2ACFRGetBaseType,GetBaseType,Int32,0,使用Gen8以外時設定"FrequencyRank Phase2"階段以及"AC FrequencyRank"階段讀取Base Data的方式，預設為0的方式，0:先讀取Base再讀取ADC  1:先讀取ADC再讀取Base  2:先讀取ADC再利用讀取多張ADC計算平均值來替代Base  3:利用UseNewMethod方式讀取單張ADC來替代Base  4:利用讀取多張ADC計算平均值來替代Base再讀取ADC,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,FrequencyRank Phase2 & AC FrequencyRank Step,FRPH2ACFRGetBaseUseSkipFrame,GetBaseUseSkipFrame,Int32,0,使用Gen8以外時設定"FrequencyRank Phase2"階段以及"AC FrequencyRank"階段時是否在讀取Base前先Skip ADC Frame  0:否  1:是,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,FrequencyRank Phase2 & AC FrequencyRank Step,FRPH2ACFRUseADCForBaseFrame,UseADCForBaseFrame,Int32,0,使用Gen8以外時設定"FrequencyRank Phase2"階段以及"AC FrequencyRank"階段在使用GetBaseType為2及3(利用讀取多張ADC計算平均值來替代Base)的方式時要讀取的ADC Frame數，預設為10,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,FrequencyRank Phase2 Step,FRPH2NormalizeType,NormalizeType,Int32,0,設定"FrequencyRank Phase2"階段之Normalize方式，0:Normalize為0~100  1:利用最大值進行Normalize,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,FrequencyRank Phase2 Step,FRPH2DataType,DataType,Int32,0,設定"FrequencyRank Phase2"階段之DV獲取方式，0:使用BASE-ADC獲取DV  1:直接讀取DV  2:使用最近的ADC平均值當作BASE再減ADC獲取DV,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,FrequencyRank Phase2 Step,FRPH2ADCTestFrame,ADCTestFrame,Int32,0,設定"FrequencyRank Phase2"階段之ADC Data Frame數,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,FrequencyRank Phase2 Step,FRPH2DVTestFrame,DVTestFrame,Int32,0,設定"FrequencyRank Phase2"階段之DV Data Frame數,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,FrequencyRank Phase2 Step,FRPH2ComputeRXTraceReference,ComputeRXTraceReference,Int32,0,設定"FrequencyRank Phase2"階段是否要計算及輸出RX Trace Reference Data，0:否  1:是,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,FrequencyRank Phase2 Step,FRPH2PenEffectRXTrace,PenEffectRXTrace,Int32,0,設定"FrequencyRank Phase2"階段受主動筆影響的RX Trace,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,FrequencyRank Phase2 Step,FRPH2ChartReferenceValueHB,ChartReferenceValueHB,Int32,0,設定"FrequencyRank Phase2"階段折線圖顯示的參考值上限值,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,FrequencyRank Phase2 Step,FRPH2ChartReferenceValueLB,ChartReferenceValueLB,Int32,0,設定"FrequencyRank Phase2"階段折線圖顯示的參考值下限值,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,FrequencyRank Phase2 Step,FRPH2ChartReferenceValueInterval,ChartReferenceValueInterval,Int32,0,設定"FrequencyRank Phase2"階段折線圖顯示的參考值間隔值,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,FrequencyRank Phase2 Step,FRPH2RecordRecentADCMeanForBase,RecordRecentADCMeanForBase,Int32,0,設定"FrequencyRank Phase2"階段是否使用最近的ADC平均值當作BASE來計算相關參考值，0:否  1:是,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,FrequencyRank Phase2 Step,FRPH2RecentADCMeanForBaseFrameNumber,RecentADCMeanForBaseFrameNumber,Int32,0,設定"FrequencyRank Phase2"階段使用最近的ADC平均值當作BASE來計算相關參考值時(RecordRecentADCMeanForBase=1)其最近的ADC Frame數,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,AC FrequencyRank Step,ACFRModeType,ModeType,Int32,0,設定"AC FrequencyRank"階段模式種類  0:使用"FrequencyRank Phase2"結果進行量測  1:使用"FrequencyRank Phase1"結果進行量測,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,AC FrequencyRank Step,ACFRSNRMethodType,SNRMethodType,Int32,0,設定"AC FrequencyRank"階段計算SNR的方式  0:原本方式  1:新方式，使用Noise正負參考值平方相加開根號當作Noise數值,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,AC FrequencyRank Step,ACFRSaveAnalysisData,SaveAnalysisData,Int32,0,設定"AC FrequencyRank"階段是否儲存分析資料  0:否  1:是，只儲存Signal與AC Noise分析資料  2:是，儲存全部分析資料,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,AC FrequencyRank Step,ACFRADCTestFrame,ADCTestFrame,Int32,0,設定"AC FrequencyRank"階段之ADC Data Frame數,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,AC FrequencyRank Step,ACFRGetSignalAreaMethod,GetSignalAreaMethod,Int32,0,設定"AC FrequencyRank"階段運算並尋找感量訊號區域的方法種類  1:UseBaseDifferEdgeDetect(新方法):使用放上感量訊號的BASE減無感量訊號的BASE差異值作邊緣偵測尋找感量訊號區域  2:UseDVEdgeDetect(舊方法):使用放上感量訊號的ADC減無感量訊號的BASE差異值作邊緣偵測尋找感量訊號區域  3:使用者用者設定的感量訊號區域,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,AC FrequencyRank Step,ACFRUseBaseDifferEdgeDetectMethod,UseBaseDifferEdgeDetectMethod,Int32,0,設定"AC FrequencyRank"階段使用UseBaseDifferEdgeDetect(新方法)時用來判斷的資料種類及方法  1:使用Convolution G Data  2:使用Convolution Gx及Gy Data,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,AC FrequencyRank Step,ACFRUseTotalDataGetSignalTrace,UseTotalDataGetSignalTrace,Int32,0,設定"AC FrequencyRank"階段使用UseBaseDifferEdgeDetect(新方法)或UseDVEdgeDetect(舊方法)時是否要用所有的頻率資料再重新判斷感應量區的Trace  0:否  1:是,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,AC FrequencyRank Step,ACFRFilterMaskType,FilterMaskType,Int32,0,設定"AC FrequencyRank"階段使用的Filter Mask種類  1:Sobel_3x3_Mask  2:Sobel_3x3_Strong_Mask  3:Another_Sharp_Mask  4:Another_Smooth_Mask  5:Identical_Mask  6:Roberts_Mask  7:Sobel_5x5_Smooth_Mask  8:Sobel_5x5_Sharp_Mask  9:Another_Strong_Sharp_Mask,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,AC FrequencyRank Step,ACFRThresholdStdRatio,ThresholdStdRatio,Double,0,設定"AC FrequencyRank"階段使用GetSignalAreaMethod為1時，其使用的門檻值之標準差值(Std)的比率值,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,AC FrequencyRank Step,ACFRMultiFrameCount_Hor,MultiFrameCount_Hor,Int32,0,設定"AC FrequencyRank"階段橫軸方向(TX方向)感量訊號區域判斷流程中之連續Frame張數值,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,AC FrequencyRank Step,ACFRSignalAreaPtg_Hor,SignalAreaPercentage_Hor,Double,0,設定"AC FrequencyRank"階段之橫軸方向(TX方向)感量訊號區域佔總Frame數之比例下限值,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,AC FrequencyRank Step,ACFRSignalAreaPtg_Ver,SignalAreaPercentage_Ver,Double,0,設定"AC FrequencyRank"階段之縱軸方向(RX方向)感量訊號區域佔總Frame數之比例下限值,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,AC FrequencyRank Step,ACFRNonSignalAreaPtg,NonSignalAreaPercentage,Double,0,設定"AC FrequencyRank"階段之感量訊號區域佔總Frame數之比例上限值,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,AC FrequencyRank Step,ACFRSignalRXStartTrace,SignalRXStartTrace,Int32,0,設定"AC FrequencyRank"階段設定感量訊號區域的起始RX Trace,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,AC FrequencyRank Step,ACFRSignalRXEndTrace,SignalRXEndTrace,Int32,0,設定"AC FrequencyRank"階段設定感量訊號區域的終止RX Trace,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,AC FrequencyRank Step,ACFRSignalTXStartTrace,SignalTXStartTrace,Int32,0,設定"AC FrequencyRank"階段設定感量訊號區域的起始TX Trace,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,AC FrequencyRank Step,ACFRSignalTXEndTrace,SignalTXEndTrace,Int32,0,設定"AC FrequencyRank"階段設定感量訊號區域的終止TX Trace,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,AC FrequencyRank Step,ACFRChartSNRValueHB,ChartSNRValueHB,Int32,0,設定"AC FrequencyRank"階段折線圖顯示的SNR參考值上限值,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,AC FrequencyRank Step,ACFRChartSNRValueLB,ChartSNRValueLB,Int32,0,設定"AC FrequencyRank"階段折線圖顯示的SNR參考值下限值,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,AC FrequencyRank Step,ACFRChartSNRValueInterval,ChartSNRValueInterval,Int32,0,設定"AC FrequencyRank"階段折線圖顯示的SNR參考值間隔值,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Raw ADC Sweep Step,RawADCSTPReg_Offset_7318,TPReg_Offset_7318(Hex) (7318),Int32,0,設定"Raw ADC Sweep"階段之7318 IC的TPReg_Offset，為十六進制數值,TRUE,TRUE
+Parameter Setting,AutoTuning SET,0,Raw ADC Sweep Step,RawADCSTPReg_Offset_7315,TPReg_Offset_7315(Hex) (7315),Int32,0,設定"Raw ADC Sweep"階段之7315 IC的TPReg_Offset，為十六進制數值,TRUE,TRUE
+Parameter Setting,AutoTuning SET,0,Raw ADC Sweep Step,RawADCSTPReg_Offset_6315,TPReg_Offset_6315(Hex) (6315),Int32,0,設定"Raw ADC Sweep"階段之6315/5015M IC的TPReg_Offset，為十六進制數值,TRUE,TRUE
+Parameter Setting,AutoTuning SET,0,Raw ADC Sweep Step,RawADCSGen8FixedFIRCOEF_SEL,FixedFIRCOEF_SEL (Gen8),Int32,0,設定"Raw ADC Sweep"階段之Gen8 IC的c_MS_FIRCOEF_SEL固定值,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Raw ADC Sweep Step,RawADCSGen6or7FixedFIRTB,FixedFIRTB (Gen6/7),Int32,0,設定"Raw ADC Sweep"階段之Gen6/Gen7 IC的_MS_FIRTB固定值,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Raw ADC Sweep Step,RawADCSFixedFIR_TAP_NUM,FixedFIR_TAP_NUM,Int32,0,設定"Raw ADC Sweep"階段之Gen6/Gen7/Gen8 IC的c_MS_FIR_TAP_NUM/_MS_FIR_TAP_NUM固定值,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Raw ADC Sweep Step,RawADCSSELCLB,SELC_LB,Int32,0,設定"Raw ADC Sweep"階段之SELC量測下限值,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Raw ADC Sweep Step,RawADCSSELCHB,SELC_HB,Int32,0,設定"Raw ADC Sweep"階段之SELC量測上限值,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Raw ADC Sweep Step,RawADCSVSELLB_Gen8,VSEL_LB (Gen8),Int32,0,設定"Raw ADC Sweep"階段之Gen8 IC的REG_VSEL量測下限值,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Raw ADC Sweep Step,RawADCSVSELHB_Gen8,VSEL_HB (Gen8),Int32,0,設定"Raw ADC Sweep"階段之Gen8 IC的REG_VSEL量測上限值,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Raw ADC Sweep Step,RawADCSVSELLB_7318,VSEL_LB (7318),Int32,0,設定"Raw ADC Sweep"階段之7318 IC的VF_VSEL量測下限值,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Raw ADC Sweep Step,RawADCSVSELHB_7318,VSEL_HB (7318),Int32,0,設定"Raw ADC Sweep"階段之7318 IC的VF_VSEL量測上限值,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Raw ADC Sweep Step,RawADCSVSELLB_7315,VSEL_LB (7315),Int32,0,設定"Raw ADC Sweep"階段之7315 IC的VF_VSEL量測下限值,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Raw ADC Sweep Step,RawADCSVSELHB_7315,VSEL_HB (7315),Int32,0,設定"Raw ADC Sweep"階段之7315 IC的VF_VSEL量測上限值,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Raw ADC Sweep Step,RawADCSVSELLB_6315,VSEL_LB (6315),Int32,0,設定"Raw ADC Sweep"階段之6315/5015M IC的VF_VSEL量測下限值,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Raw ADC Sweep Step,RawADCSVSELHB_6315,VSEL_HB (6315),Int32,0,設定"Raw ADC Sweep"階段之6315/5015M IC的VF_VSEL量測上限值,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Raw ADC Sweep Step,RawADCSLGLB,LG_LB,Int32,0,設定"Raw ADC Sweep"階段之LG量測下限值,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Raw ADC Sweep Step,RawADCSLGHB,LG_HB,Int32,0,設定"Raw ADC Sweep"階段之LG量測上限值,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Raw ADC Sweep Step,RawADCSSELGMLB,SELGM_LB,Int32,0,設定"Raw ADC Sweep"階段之SELGM量測下限值,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Raw ADC Sweep Step,RawADCSSELGMHB,SELGM_HB,Int32,0,設定"Raw ADC Sweep"階段之SELGM量測上限值,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Raw ADC Sweep Step,RawADCSFitADCLB,FitADC_LB,Int32,0,設定"Raw ADC Sweep"階段之合適的ADC下限值,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Raw ADC Sweep Step,RawADCSFitADCHB,FitADC_HB,Int32,0,設定"Raw ADC Sweep"階段之合適的ADC上限值,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Raw ADC Sweep Step,RawADCSADCTestFrame,ADCTestFrame,Int32,0,設定"Raw ADC Sweep"階段之ADC Data Frame數,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Raw ADC Sweep Step,RawADCSGen7EnableHWTXN,EnableHWTXN (Gen7),Int32,0,設定"Raw ADC Sweep"階段使用Gen7 IC時是否有開啟Hardware TXN功能，0:否，關閉  1:是，開啟,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Raw ADC Sweep Step,RawADCSGen6or7EnableFWTX4,EnableFWTX4 (Gen6/7),Int32,0,設定"Raw ADC Sweep"階段使用Gen6/Gen7 IC時是否有開啟Firmware TX4功能，0:否，關閉  1:是，開啟,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Self Related Step,SelfTraceType,TraceType,Int32,0,設定"Self"相關階段之量測Trace方式，0:RX Trace  1:TX Trace,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Self FrequencySweep Step,SelfFSGetDataType,GetDataType,Int32,0,設定"Self FrequencySweep"階段之讀取資料方式，0:Test Mode Data  1:Report Mode Data,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Self FrequencySweep Step,SelfFSGetReportType,GetReportType,Int32,0,設定"Self FrequencySweep"階段使用讀取Report Mode Data的方式，0:Group Data(Trace1+Trace2)  1:Trace Data(Single Trace)  2:Trace Data Title,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Self FrequencySweep Step,SelfFSGetReportSequence,GetReportSequence,Int32,0,設定"Self FrequencySweep"階段使用讀取Single Trace Data的順序，0:Odd->Even  1:Even->Odd  2:Forward->Backward  3:Backward->Forward,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Self FrequencySweep Step,SelfFSGetReportByte,GetReportByte,Int32,0,設定"Self FrequencySweep"階段使用讀取Report Mode Data方式的Byte數值,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Self FrequencySweep Step,SelfFSGetSignalReport,GetSignalReport,Int32,0,設定"Self FrequencySweep"階段在使用Report Mode Data時是否要讀取Signal Data，0:否  1:是,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Self FrequencySweep Step,SelfFSDisplayWarning,DisplayWarning,Int32,0,設定"Self FrequencySweep"階段使用讀取Report Mode Data的方式若有讀取Signal Data是否顯示警示視窗  0:否  1:是,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Self FrequencySweep Step,SelfFSRepeatCount,RepeatCount,Int32,0,設定"Self FrequencySweep"階段在使用Report Mode Data時設定重複錄製的次數,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Self FrequencySweep Step,SelfFSTestFrame,TestFrame,Int32,0,設定"Self FrequencySweep"階段之dV Data Frame數,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Self FrequencySweep Step,SelfFSSum,Sum,Int32,0,設定"Self FrequencySweep"階段之Sum值，若設定小於等於0則會使用FrequencyList檔案內的Sum值,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Self FrequencySweep Step,SelfFSGain,Gain,Int32,0,設定"Self FrequencySweep"階段之Gain值，若設定小於0則會使用FrequencyList檔案內的Gain值,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Self FrequencySweep Step,SelfFSCAG,CAG,Int32,0,設定"Self FrequencySweep"階段之CAG值，若設定小於0則會使用FrequencyList檔案內的CAG值,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Self FrequencySweep Step,SelfFSIQ_BSH,IQ_BSH,Int32,0,設定"Self FrequencySweep"階段之IQ_BSH值，若設定小於0則會使用FrequencyList檔案內的IQ_BSH值,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Self FrequencySweep Step,SelfFSGetKValue,GetKValue,Int32,0,設定"Self FrequencySweep"階段是否讀取K Value，0:否  1:是,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Self FrequencySweep Step,SelfFSRunKSequence,RunKSequence,Int32,0,設定"Self FrequencySweep"階段是否執行量測多組Calibration Parameter(NCP/NCN)序列，0:否  1:是，使用NCN=NCP的方式  2:是，使用NCN!=NCP的方式  3:是，使用"_MS_MM_RX0FileName"內的NCP與NCN,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Self FrequencySweep Step,SelfFS_MS_MM_RX0FileName,_MS_MM_RX0FileName,String,0,設定"Self FrequencySweep"階段使用RunKSequence為3時的檔案名稱(含副檔名),TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Self FrequencySweep Step,SelfFSNCPValueLB,NCPValueLB,Int32,0,設定"Self FrequencySweep"階段使用執行量測多組NCP序列之最低NCP數值,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Self FrequencySweep Step,SelfFSNCPValueHB,NCPValueHB,Int32,0,設定"Self FrequencySweep"階段使用執行量測多組NCP序列之最高NCP數值,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Self FrequencySweep Step,SelfFSNCNValueLB,NCNValueLB,Int32,0,設定"Self FrequencySweep"階段使用執行量測多組NCN序列之最低NCN數值,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Self FrequencySweep Step,SelfFSNCNValueHB,NCNValueHB,Int32,0,設定"Self FrequencySweep"階段使用執行量測多組NCN序列之最高NCN數值,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Self FrequencySweep Step,SelfFSGetReportTimeout,GetReportTimeout(ms),Int32,0,設定"Self FrequencySweep"階段使用Report Mode Data方式的時間，單位為ms,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Self FrequencySweep Step,SelfFSReportNumber,ReportNumber,Int32,0,設定"Self FrequencySweep"階段使用Report Mode Data方式之Report筆數,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Self FrequencySweep Step,SelfFSReportSignedValue,ReportSignedValue,Int32,0,設定"Self FrequencySweep"階段使用Report Mode Data方式是否為有正負號之數值，0:否  1:是  2:兩樣都計算,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Self FrequencySweep Step,SelfFSRunCALData,RunCALData,Int32,0,設定"Self FrequencySweep"階段使用讀取Report Mode Data的方式若有讀取Signal Data是否執行ENCAL_SF功能  0:否  1:是  2:是，只將"StartTraceNumber"至"EndTraceNumber"進行CAL設定,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Self FrequencySweep Step,SelfFSCALValue,CALValue,Int32,0,設定"Self FrequencySweep"階段使用執行ENCAL_SF功能時的CAL數值,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Self FrequencySweep Step,SelfFSCALStartTrace,CALStartTrace,Int32,0,設定"Self FrequencySweep"階段使用執行ENCAL_SF功能時的StartTrace,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Self FrequencySweep Step,SelfFSCALStartTraceNumber,CALStartTraceNumber,Int32,0,設定"Self FrequencySweep"階段使用執行ENCAL_SF功能時的StartTraceNumber,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Self FrequencySweep Step,SelfFSCALEndTraceNumber,CALEndTraceNumber,Int32,0,設定"Self FrequencySweep"階段使用執行ENCAL_SF功能時的EndTraceNumber,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Self NCPNCNSweep Step,SelfPNSTestFrame,TestFrame,Int32,0,設定"Self NCPNCNSweep"階段之Raw P/N Data Frame數,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Self NCPNCNSweep Step,SelfPNSGetKValue,GetKValue,Int32,0,設定"Self NCPNCNSweep"階段是否讀取K Value，0:否  1:是,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Self NCPNCNSweep Step,SelfPNSNCPNCNValueLB,NCPNCNValueLB,Int32,0,設定"Self NCPNCNSweep"階段使用執行量測多組NCP序列之最低NCP/NCN數值,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Self NCPNCNSweep Step,SelfPNSNCPNCNValueHB,NCPNCNValueHB,Int32,0,設定"Self NCPNCNSweep"階段使用執行量測多組NCP序列之最高NCP/NCN數值,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Self NCPNCNSweep Step,SelfPNS_MS_MM_RX0Count,_MS_MM_RX0Count,Int32,0,設定"Self NCPNCNSweep"階段"_MS_MM_RX0"個數,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Self NCPNCNSweep Step,SelfPNSStartTrace,StartTrace,Int32,0,設定"Self NCPNCNSweep"階段起始的Trace,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Self FixedParameter,SelfFPStandardPH1PH2Sum,StandardPH1PH2Sum,Int32,0,設定"Self FrequencySweep"階段用來計算固定取樣時間的PH1+PH2數值,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Self FixedParameter,SelfFPStandardSum,StandardSum,Int32,0,設定"Self FrequencySweep"階段用來計算固定取樣時間的Sum(DFT_NUM)數值,TRUE,FALSE
+Parameter Setting,AutoTuning SET,0,Self FixedParameter,SelfFPPH2_LMT_LB,PH2_LMTLowBoundary,Int32,0,設定"Self FrequencySweep"階段使用的_SELF_PH2_LMT最低門檻值，_SELF_PH2_LMT須大於此設定值,TRUE,FALSE

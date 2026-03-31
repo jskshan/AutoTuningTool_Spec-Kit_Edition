@@ -1,0 +1,2 @@
+1. New Version(2020/09/XX) Old adb.exe
+2. Update from ELAN Touch Innovation 2016 ver 1.0.12_Socket (2025/10/09)

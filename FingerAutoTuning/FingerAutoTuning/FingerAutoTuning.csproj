@@ -1,0 +1,464 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8D40585B-73FD-4744-AD08-77BA60B494F4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FingerAutoTuning</RootNamespace>
+    <AssemblyName>FingerAutoTuning</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <!-- CS1685: ExtensionAttribute 同時定義於 mscorlib.dll 與 System.Core.dll，屬已知無害警告，予以抑制 -->
+    <NoWarn>1685</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;_USE_VC2010</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;_USE_VC2010</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Elan.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release_9F07_Socket|x86'">
+    <OutputPath>bin\Release_9F07_Socket\</OutputPath>
+    <DefineConstants>TRACE;_USE_VC2010;_USE_9F07_SOCKET</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FontAwesome.Sharp, Version=5.15.4.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\FontAwesome.Sharp.5.15.4\lib\net40\FontAwesome.Sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="MathNet.Numerics, Version=4.5.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\AutoTuning_NewUI\bin\Debug\MathNet.Numerics.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\AutoTuning_NewUI\bin\Debug\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="Redmine.Net.Api">
+      <HintPath>..\..\AutoTuning_NewUI\bin\Debug\Redmine.Net.Api.dll</HintPath>
+    </Reference>
+    <Reference Include="Renci.SshNet">
+      <HintPath>..\..\AutoTuning_NewUI\bin\Debug\Renci.SshNet.dll</HintPath>
+    </Reference>
+    <Reference Include="RJCodeAdvance.RJControls, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\RJCodeAdvance.RJControls.1.0.0\lib\net45\RJCodeAdvance.RJControls.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AnalysisFlow_RawADCS.cs" />
+    <Compile Include="AppCore\ConnectAndroidDevice.cs" />
+    <Compile Include="AppCore\ConnectChromeRemoteClient.cs" />
+    <Compile Include="AppCore\ConnectSSHSocket.cs" />
+    <Compile Include="AppCore\ConnectWindowsDevice.cs" />
+    <Compile Include="AppCore\ConvertHDF5Data.cs" />
+    <Compile Include="AppCore\GetFrequencyData.cs" />
+    <Compile Include="AppCore\GetHIDReport.cs" />
+    <Compile Include="AppCore\GetReportData.cs" />
+    <Compile Include="AppCore\KeepAndroidWakeUp.cs" />
+    <Compile Include="AppCore\CheckFWAnalogParameter.cs" />
+    <Compile Include="AppCore\LoadLogsAndEnsureRecordDir.cs" />
+    <Compile Include="AppCore\MoveLogData.cs" />
+    <Compile Include="AppCore\OutputResult.cs" />
+    <Compile Include="AppCore\RecordData.cs" />
+    <Compile Include="Class\ADBFileIO.cs" />
+    <Compile Include="AnalysisFlow_ACFR.cs" />
+    <Compile Include="AnalysisFlow_FRPH2.cs" />
+    <Compile Include="AnalysisFlow_Raw.cs" />
+    <Compile Include="AnalysisFlow_FRPH1.cs" />
+    <Compile Include="AnalysisFlow_SelfFS.cs" />
+    <Compile Include="AnalysisFlow_SelfPNS.cs" />
+    <Compile Include="AppCore.cs" />
+    <Compile Include="Class\AppCoreDefine.cs" />
+    <Compile Include="Class\ElanBatchProcess.cs" />
+    <Compile Include="Class\ElanCommand_Gen6or7.cs" />
+    <Compile Include="Class\ElanCommand_Gen8.cs" />
+    <Compile Include="Class\ElanCommand_Gen8_Old.cs" />
+    <Compile Include="Class\ElanDefine.cs" />
+    <Compile Include="Class\ElanFunction.cs" />
+    <Compile Include="Class\ElanSSHClient.cs" />
+    <Compile Include="Class\ElanTouch.cs" />
+    <Compile Include="Class\ElanTouchSwitch.cs" />
+    <Compile Include="Class\ElanTouch_Socket.cs" />
+    <Compile Include="Class\ElanTouch_Old_2.cs" />
+    <Compile Include="Class\ExecAndroidNativeServer.cs" />
+    <Compile Include="Class\ExecAndroidRemoteServer.cs" />
+    <Compile Include="Class\FrameMgr.cs" />
+    <Compile Include="Class\IniFileFormat.cs" />
+    <Compile Include="Class\InternalDefine.cs" />
+    <Compile Include="Class\MathMethod.cs" />
+    <Compile Include="Class\UserInterfaceDefine.cs" />
+    <Compile Include="AppCore\ConnectDevice.cs" />
+    <Compile Include="ctrlMAChart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrlMAChart.Designer.cs">
+      <DependentUpon>ctrlMAChart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctrlMADataGridView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrlMADataGridView.Designer.cs">
+      <DependentUpon>ctrlMADataGridView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctrlParamPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrlParamPage.Designer.cs">
+      <DependentUpon>ctrlParamPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataAnalysis.cs" />
+    <Compile Include="DataSave.cs" />
+    <Compile Include="Class\ElanBatchProcess_9F07.cs" />
+    <Compile Include="Class\ElanDirectTouch.cs" />
+    <Compile Include="AppCore\ExecuteCommand.cs" />
+    <Compile Include="frmFeedback.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFeedback.Designer.cs">
+      <DependentUpon>frmFeedback.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFeedbackParameterSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFeedbackParameterSetting.Designer.cs">
+      <DependentUpon>frmFeedbackParameterSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMultiAnalysis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMultiAnalysis.Designer.cs">
+      <DependentUpon>frmMultiAnalysis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRedmineTask.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRedmineTask.Designer.cs">
+      <DependentUpon>frmRedmineTask.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSelfFSChart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSelfFSChart.Designer.cs">
+      <DependentUpon>frmSelfFSChart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmWarningMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmWarningMessage.Designer.cs">
+      <DependentUpon>frmWarningMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmACFRChart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmACFRChart.Designer.cs">
+      <DependentUpon>frmACFRChart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFolderSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFolderSelect.Designer.cs">
+      <DependentUpon>frmFolderSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFRPH2Chart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFRPH2Chart.Designer.cs">
+      <DependentUpon>frmFRPH2Chart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFullScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFullScreen.Designer.cs">
+      <DependentUpon>frmFullScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGetIAPAddress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGetIAPAddress.Designer.cs">
+      <DependentUpon>frmGetIAPAddress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMainEventItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Class\BlockingQueue.cs" />
+    <Compile Include="Class\DebugLogAPI.cs" />
+    <Compile Include="Class\ElanCommand.cs" />
+    <Compile Include="Class\ElanConvert..cs" />
+    <Compile Include="Class\ElanTouch_Old_1.cs" />
+    <Compile Include="Class\InputDevice.cs" />
+    <Compile Include="Class\StringConvert.cs" />
+    <Compile Include="Class\Win32API.cs" />
+    <Compile Include="clsElanXML.cs" />
+    <Compile Include="ctrlTestItemCheckBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrlTestItemCheckBox.Designer.cs">
+      <DependentUpon>ctrlTestItemCheckBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHIDDevBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHIDDevBase.Designer.cs">
+      <DependentUpon>frmHIDDevBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmParamSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmParamSetting.Designer.cs">
+      <DependentUpon>frmParamSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPHCKPattern.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPHCKPattern.Designer.cs">
+      <DependentUpon>frmPHCKPattern.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFRPH1Chart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFRPH1Chart.Designer.cs">
+      <DependentUpon>frmFRPH1Chart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTestFreqSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTestFreqSetting.Designer.cs">
+      <DependentUpon>frmTestFreqSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppCore\GetAndSetFWOption.cs" />
+    <Compile Include="AppCore\GetFrameData.cs" />
+    <Compile Include="AppCore\GetFWParameter.cs" />
+    <Compile Include="Helper\DGVHelper.cs" />
+    <Compile Include="LineBarCursorPattern.cs" />
+    <Compile Include="FreeDrawPatterncs.cs" />
+    <Compile Include="frmStepSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStepSetting.Designer.cs">
+      <DependentUpon>frmStepSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPattern.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPattern.Designer.cs">
+      <DependentUpon>frmPattern.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPatternMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPatternMenu.Designer.cs">
+      <DependentUpon>frmPatternMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParamBase.cs" />
+    <Compile Include="ParamMgr.cs" />
+    <Compile Include="ParamProperties.cs" />
+    <Compile Include="PrimaryScreen.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RedmineProcess.cs" />
+    <Compile Include="AppCore\ScreenSetting.cs" />
+    <Compile Include="AppCore\SetAndGetFWParameter.cs" />
+    <Compile Include="SetFreqencyItemList.cs" />
+    <Compile Include="AppCore\SetFWParameter.cs" />
+    <Compile Include="SetRawADCSweepItemList.cs" />
+    <Compile Include="TestPattern.cs" />
+    <EmbeddedResource Include="ctrlMAChart.resx">
+      <DependentUpon>ctrlMAChart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctrlMADataGridView.resx">
+      <DependentUpon>ctrlMADataGridView.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctrlParamPage.resx">
+      <DependentUpon>ctrlParamPage.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFeedback.resx">
+      <DependentUpon>frmFeedback.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFeedbackParameterSetting.resx">
+      <DependentUpon>frmFeedbackParameterSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMultiAnalysis.resx">
+      <DependentUpon>frmMultiAnalysis.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRedmineTask.resx">
+      <DependentUpon>frmRedmineTask.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSelfFSChart.resx">
+      <DependentUpon>frmSelfFSChart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmWarningMessage.resx">
+      <DependentUpon>frmWarningMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmACFRChart.resx">
+      <DependentUpon>frmACFRChart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFolderSelect.resx">
+      <DependentUpon>frmFolderSelect.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFRPH2Chart.resx">
+      <DependentUpon>frmFRPH2Chart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGetIAPAddress.resx">
+      <DependentUpon>frmGetIAPAddress.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmParamSetting.resx">
+      <DependentUpon>frmParamSetting.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPHCKPattern.resx">
+      <DependentUpon>frmPHCKPattern.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFRPH1Chart.resx">
+      <DependentUpon>frmFRPH1Chart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStepSetting.resx">
+      <DependentUpon>frmStepSetting.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPatternMenu.resx">
+      <DependentUpon>frmPatternMenu.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTestFreqSetting.resx">
+      <DependentUpon>frmTestFreqSetting.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Elan.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

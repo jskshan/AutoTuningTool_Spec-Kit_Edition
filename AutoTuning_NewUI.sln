@@ -1,0 +1,63 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual C# Express 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FingerAutoTuning", "FingerAutoTuning\FingerAutoTuning\FingerAutoTuning.csproj", "{8D40585B-73FD-4744-AD08-77BA60B494F4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoTuning_NewUI", "AutoTuning_NewUI\AutoTuning_NewUI.csproj", "{1107E2DA-BF9D-4019-B8EB-6FEE4E4FC980}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MPPPenAutoTuning", "MPPPenAutoTuning\MPPPenAutoTuning\MPPPenAutoTuning.csproj", "{54C7AF1B-E89E-4EA1-ABC4-C823A686AC8E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release_9F07_Socket|Any CPU = Release_9F07_Socket|Any CPU
+		Release_9F07_Socket|x86 = Release_9F07_Socket|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8D40585B-73FD-4744-AD08-77BA60B494F4}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{8D40585B-73FD-4744-AD08-77BA60B494F4}.Debug|Any CPU.Build.0 = Debug|x86
+		{8D40585B-73FD-4744-AD08-77BA60B494F4}.Debug|x86.ActiveCfg = Debug|x86
+		{8D40585B-73FD-4744-AD08-77BA60B494F4}.Debug|x86.Build.0 = Debug|x86
+		{8D40585B-73FD-4744-AD08-77BA60B494F4}.Release_9F07_Socket|Any CPU.ActiveCfg = Release_9F07_Socket|x86
+		{8D40585B-73FD-4744-AD08-77BA60B494F4}.Release_9F07_Socket|Any CPU.Build.0 = Release_9F07_Socket|x86
+		{8D40585B-73FD-4744-AD08-77BA60B494F4}.Release_9F07_Socket|x86.ActiveCfg = Release_9F07_Socket|x86
+		{8D40585B-73FD-4744-AD08-77BA60B494F4}.Release_9F07_Socket|x86.Build.0 = Release_9F07_Socket|x86
+		{8D40585B-73FD-4744-AD08-77BA60B494F4}.Release|Any CPU.ActiveCfg = Release|x86
+		{8D40585B-73FD-4744-AD08-77BA60B494F4}.Release|Any CPU.Build.0 = Release|x86
+		{8D40585B-73FD-4744-AD08-77BA60B494F4}.Release|x86.ActiveCfg = Release|x86
+		{8D40585B-73FD-4744-AD08-77BA60B494F4}.Release|x86.Build.0 = Release|x86
+		{1107E2DA-BF9D-4019-B8EB-6FEE4E4FC980}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{1107E2DA-BF9D-4019-B8EB-6FEE4E4FC980}.Debug|Any CPU.Build.0 = Debug|x86
+		{1107E2DA-BF9D-4019-B8EB-6FEE4E4FC980}.Debug|x86.ActiveCfg = Debug|x86
+		{1107E2DA-BF9D-4019-B8EB-6FEE4E4FC980}.Debug|x86.Build.0 = Debug|x86
+		{1107E2DA-BF9D-4019-B8EB-6FEE4E4FC980}.Release_9F07_Socket|Any CPU.ActiveCfg = Release_9F07_Socket|x86
+		{1107E2DA-BF9D-4019-B8EB-6FEE4E4FC980}.Release_9F07_Socket|Any CPU.Build.0 = Release_9F07_Socket|x86
+		{1107E2DA-BF9D-4019-B8EB-6FEE4E4FC980}.Release_9F07_Socket|x86.ActiveCfg = Release_9F07_Socket|x86
+		{1107E2DA-BF9D-4019-B8EB-6FEE4E4FC980}.Release_9F07_Socket|x86.Build.0 = Release_9F07_Socket|x86
+		{1107E2DA-BF9D-4019-B8EB-6FEE4E4FC980}.Release|Any CPU.ActiveCfg = Release|x86
+		{1107E2DA-BF9D-4019-B8EB-6FEE4E4FC980}.Release|Any CPU.Build.0 = Release|x86
+		{1107E2DA-BF9D-4019-B8EB-6FEE4E4FC980}.Release|x86.ActiveCfg = Release|x86
+		{1107E2DA-BF9D-4019-B8EB-6FEE4E4FC980}.Release|x86.Build.0 = Release|x86
+		{54C7AF1B-E89E-4EA1-ABC4-C823A686AC8E}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{54C7AF1B-E89E-4EA1-ABC4-C823A686AC8E}.Debug|Any CPU.Build.0 = Debug|x86
+		{54C7AF1B-E89E-4EA1-ABC4-C823A686AC8E}.Debug|x86.ActiveCfg = Debug|x86
+		{54C7AF1B-E89E-4EA1-ABC4-C823A686AC8E}.Debug|x86.Build.0 = Debug|x86
+		{54C7AF1B-E89E-4EA1-ABC4-C823A686AC8E}.Release_9F07_Socket|Any CPU.ActiveCfg = Release_9F07_Socket|x86
+		{54C7AF1B-E89E-4EA1-ABC4-C823A686AC8E}.Release_9F07_Socket|Any CPU.Build.0 = Release_9F07_Socket|x86
+		{54C7AF1B-E89E-4EA1-ABC4-C823A686AC8E}.Release_9F07_Socket|x86.ActiveCfg = Release_9F07_Socket|x86
+		{54C7AF1B-E89E-4EA1-ABC4-C823A686AC8E}.Release_9F07_Socket|x86.Build.0 = Release_9F07_Socket|x86
+		{54C7AF1B-E89E-4EA1-ABC4-C823A686AC8E}.Release|Any CPU.ActiveCfg = Release|x86
+		{54C7AF1B-E89E-4EA1-ABC4-C823A686AC8E}.Release|Any CPU.Build.0 = Release|x86
+		{54C7AF1B-E89E-4EA1-ABC4-C823A686AC8E}.Release|x86.ActiveCfg = Release|x86
+		{54C7AF1B-E89E-4EA1-ABC4-C823A686AC8E}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D1313937-E9E1-42C4-B8FE-905F93E65A48}
+	EndGlobalSection
+EndGlobal
