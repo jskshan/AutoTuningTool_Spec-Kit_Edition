@@ -893,32 +893,19 @@ namespace FingerAutoTuning
             else
                 sOutputValue = sValue;
 
-            string sDefaultOverrideValue = ReadDefaultOverrideValue(sSection, sKey);
+            if (File.Exists(m_sDefaultFileName) == true)
+            {
+                StringBuilder temp = new StringBuilder(255);
+                int i = Win32.GetPrivateProfileString(sSection, sKey, "DataNotExist!\\[N/A]", temp, 255, m_sDefaultFileName);
 
-            if (sDefaultOverrideValue != null)
-                return sDefaultOverrideValue;
+                if (temp != null)
+                {
+                    if (temp.ToString() != "DataNotExist!\\[N/A]")
+                        return temp.ToString();
+                }
+            }
 
             return sOutputValue;
-        }
-
-        /// <summary>
-        /// 讀取 Default.ini 中的 override 值；此值依既有設計會覆蓋 XML/setting 檔結果。
-        /// </summary>
-        protected string ReadDefaultOverrideValue(string sSection, string sKey)
-        {
-            if (File.Exists(m_sDefaultFileName) == false)
-                return null;
-
-            StringBuilder temp = new StringBuilder(255);
-            int i = Win32.GetPrivateProfileString(sSection, sKey, "DataNotExist!\\[N/A]", temp, 255, m_sDefaultFileName);
-
-            if (temp == null)
-                return null;
-
-            if (temp.ToString() == "DataNotExist!\\[N/A]")
-                return null;
-
-            return temp.ToString();
         }
 
         protected void XmlWriteValue(string sSection, string sKey, string sValue)

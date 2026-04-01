@@ -148,18 +148,6 @@ namespace FingerAutoTuning
         }
 
         /// <summary>
-        /// 統一切換連線握手期間的 Stop 狀態,避免 Android 連線流程在多個區段重複撰寫相同的 UI Invoke 邏輯
-        /// </summary>
-        /// <param name="bEnableStop">true 表示允許中止, false 表示暫時禁止中止</param>
-        private void SetConnectionStopState(bool bEnableStop)
-        {
-            m_cfrmParent.Invoke((MethodInvoker)delegate
-            {
-                m_cfrmParent.SetButton(bEnableStop ? frmMain.FlowState.StopEnable : frmMain.FlowState.StopDisable);
-            });
-        }
-
-        /// <summary>
         /// 執行遠端伺服器的共用邏輯,設定事件處理、更新SH檔案(非SPI類型)、啟動伺服器並連接Socket
         /// </summary>
         /// <param name="sServerType">伺服器類型字串,用於訊息顯示及錯誤處理</param>
@@ -169,7 +157,10 @@ namespace FingerAutoTuning
             m_cRunServerMgr.m_AndroidRemoteServerEvent = OnAndroidRemoteServerEvent;
             m_cRunServerMgr.m_OutputTextEvent = OnAndroidRemoteServerOutputText;
 
-            SetConnectionStopState(false);
+            m_cfrmParent.Invoke((MethodInvoker)delegate
+            {
+                m_cfrmParent.SetButton(frmMain.FlowState.StopDisable);
+            });
 
             if (sServerType.Contains("SPI"))
             {
@@ -186,13 +177,19 @@ namespace FingerAutoTuning
             {
                 MessageBox.Show(m_cRunServerMgr.ErrorText, string.Format("Run {0} Error", sServerType), MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                SetConnectionStopState(true);
+                m_cfrmParent.Invoke((MethodInvoker)delegate
+                {
+                    m_cfrmParent.SetButton(frmMain.FlowState.StopEnable);
+                });
 
                 m_sErrorMessage = string.Format("Run {0} Error({1})", sServerType, m_cRunServerMgr.ErrorText);
                 return false;
             }
 
-            SetConnectionStopState(true);
+            m_cfrmParent.Invoke((MethodInvoker)delegate
+            {
+                m_cfrmParent.SetButton(frmMain.FlowState.StopEnable);
+            });
 
             OutputMessage(string.Format("-Execute {0} Server Success", sServerType));
 

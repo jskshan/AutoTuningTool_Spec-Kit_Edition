@@ -38,106 +38,6 @@ namespace FingerAutoTuning
             m_sProjectName = sProjectName;
         }
 
-        // 集中建立 DataType 子目錄，避免各輸出方法重複維護相同路徑規則。
-        private string EnsureDataTypeDirectoryPath(string sLogDirectoryPath, string sDataType)
-        {
-            string sDataTypeDirectoryPath = string.Format(@"{0}\{1}", sLogDirectoryPath, sDataType);
-
-            if (Directory.Exists(sDataTypeDirectoryPath) == false)
-                Directory.CreateDirectory(sDataTypeDirectoryPath);
-
-            return sDataTypeDirectoryPath;
-        }
-
-        // 集中組裝 report txt 檔名，保留一般模式與 Self 模式既有命名差異。
-        private string BuildReportFileName(SaveDataInfo cSaveDataInfo, int nRepeatIndex, bool bSetRepeatIndex, bool bIncludeSelfKSequence)
-        {
-            if (cSaveDataInfo.m_bGetSelf == true)
-            {
-                int nSelfPH2Sum = ElanConvert.Convert2SelfPH2SumInt(cSaveDataInfo.m_n_SELF_PH2E_LAT, cSaveDataInfo.m_n_SELF_PH2E_LMT,
-                                                                    cSaveDataInfo.m_n_SELF_PH2_LAT, cSaveDataInfo.m_n_SELF_PH2);
-                double dFrequency = ElanConvert.Convert2Frequency(cSaveDataInfo.m_n_SELF_PH1, nSelfPH2Sum);
-                string sDataFileName = "";
-
-                if (bSetRepeatIndex == false)
-                {
-                    sDataFileName = string.Format("Report_{0}_{1}_{2}_{3}_{4}_{5}", dFrequency.ToString("0.000"), cSaveDataInfo.m_n_SELF_PH1.ToString("x2").ToUpper(),
-                                                  cSaveDataInfo.m_n_SELF_PH2E_LMT.ToString("x2").ToUpper(),
-                                                  nSelfPH2Sum.ToString("x2").ToUpper(),
-                                                  cSaveDataInfo.m_nSelf_DFT_NUM.ToString("x2").ToUpper(), cSaveDataInfo.m_sSelfTraceType);
-                }
-                else
-                {
-                    sDataFileName = string.Format("Report_{0}_{1}_{2}_{3}_{4}_{5}_{6}", dFrequency.ToString("0.000"), cSaveDataInfo.m_n_SELF_PH1.ToString("x2").ToUpper(),
-                                                  cSaveDataInfo.m_n_SELF_PH2E_LMT.ToString("x2").ToUpper(),
-                                                  nSelfPH2Sum.ToString("x2").ToUpper(),
-                                                  cSaveDataInfo.m_nSelf_DFT_NUM.ToString("x2").ToUpper(), cSaveDataInfo.m_sSelfTraceType,
-                                                  nRepeatIndex);
-                }
-
-                if (bIncludeSelfKSequence == true && cSaveDataInfo.m_bSetSelfKSequence == true)
-                    sDataFileName = string.Format("{0}_P{1:00}N{2:00}", sDataFileName, cSaveDataInfo.m_nSelfNCPValue, cSaveDataInfo.m_nSelfNCNValue);
-
-                return sDataFileName;
-            }
-
-            double dNormalFrequency = ElanConvert.Convert2Frequency(cSaveDataInfo.m_nPH1, cSaveDataInfo.m_nPH2);
-
-            if (bSetRepeatIndex == false)
-            {
-                return string.Format("Report_{0}_{1}_{2}", dNormalFrequency.ToString("0.000"), cSaveDataInfo.m_nPH1.ToString("x2").ToUpper(),
-                                     cSaveDataInfo.m_nPH2.ToString("x2").ToUpper());
-            }
-
-            return string.Format("Report_{0}_{1}_{2}_{3}", dNormalFrequency.ToString("0.000"), cSaveDataInfo.m_nPH1.ToString("x2").ToUpper(),
-                                 cSaveDataInfo.m_nPH2.ToString("x2").ToUpper(), nRepeatIndex);
-        }
-
-        // 集中組裝 frame csv 檔名，保留 Raw ADC Sweep、Self 與一般模式既有規則。
-        private string BuildFrameDataFileName(SaveDataInfo cSaveDataInfo, string sDataType)
-        {
-            if (cSaveDataInfo.m_bRawADCSweep == true)
-            {
-                return string.Format("{0}_{1}_{2}_{3}_{4}", sDataType, cSaveDataInfo.m_nSELC, cSaveDataInfo.m_nVSEL, cSaveDataInfo.m_nLG, cSaveDataInfo.m_nSELGM);
-            }
-
-            if (cSaveDataInfo.m_bGetSelf == true)
-            {
-                int nSelfPH2Sum = ElanConvert.Convert2SelfPH2SumInt(cSaveDataInfo.m_n_SELF_PH2E_LAT, cSaveDataInfo.m_n_SELF_PH2E_LMT,
-                                                                    cSaveDataInfo.m_n_SELF_PH2_LAT, cSaveDataInfo.m_n_SELF_PH2);
-                double dFrequency = ElanConvert.Convert2Frequency(cSaveDataInfo.m_n_SELF_PH1, nSelfPH2Sum);
-                string sDataFileName = string.Format("{0}_{1}_{2}_{3}_{4}_{5}_{6}", sDataType, dFrequency.ToString("0.000"),
-                                                     cSaveDataInfo.m_n_SELF_PH1.ToString("x2").ToUpper(),
-                                                     cSaveDataInfo.m_n_SELF_PH2E_LMT.ToString("x2").ToUpper(),
-                                                     nSelfPH2Sum.ToString("x2").ToUpper(), cSaveDataInfo.m_sSelfTraceType,
-                                                     cSaveDataInfo.m_nSelf_DFT_NUM.ToString("x4").ToUpper());
-
-                if (cSaveDataInfo.m_bSetSelfKSequence == true)
-                    sDataFileName = string.Format("{0}_P{1:00}N{2:00}", sDataFileName, cSaveDataInfo.m_nSelfNCPValue, cSaveDataInfo.m_nSelfNCNValue);
-
-                return sDataFileName;
-            }
-
-            double dNormalFrequency = ElanConvert.Convert2Frequency(cSaveDataInfo.m_nPH1, cSaveDataInfo.m_nPH2);
-            return string.Format("{0}_{1}_{2}_{3}", sDataType, dNormalFrequency.ToString("0.000"), cSaveDataInfo.m_nPH1.ToString("x2").ToUpper(),
-                                 cSaveDataInfo.m_nPH2.ToString("x2").ToUpper());
-        }
-
-        // 集中 Self trace 分隔字串，避免 report txt 內重複維護相同常數文字。
-        private string GetSelfTraceSeparator(string sSelfTracePart)
-        {
-            if (sSelfTracePart == MainConstantParameter.m_sOddTrace)
-                return "====================Odd Trace========================";
-            else if (sSelfTracePart == MainConstantParameter.m_sEvenTrace)
-                return "====================Even Trace=======================";
-            else if (sSelfTracePart == MainConstantParameter.m_sForwardTrace)
-                return "====================Forward Trace=======================";
-            else if (sSelfTracePart == MainConstantParameter.m_sBackwardTrace)
-                return "====================Backward Trace======================";
-
-            return "=====================================================";
-        }
-
         public bool CreateRecordData(SaveDataInfo cSaveDataInfo, string sLogDirectoryPath, string sDataType, int nRepeatIndex, bool bGetSignalData, 
                                      bool bSetRepeatIndex = false, bool bFirstData = true)
         {
@@ -150,13 +50,56 @@ namespace FingerAutoTuning
             if (bGetSignalData == true)
                 sState = "(S)";
 
-            string sDataTypeDirectoryPath = EnsureDataTypeDirectoryPath(cSaveDataInfo.m_sLogDirectoryPath, sDataType);
-            string sDataFileName = BuildReportFileName(cSaveDataInfo, nRepeatIndex, bSetRepeatIndex, true);
-            string sDataFilePath = string.Format(@"{0}\{1}.txt", sDataTypeDirectoryPath, sDataFileName);
-            double dFrequency = 0.0;
+            string sDataTypeDirectoryPath = string.Format(@"{0}\{1}", cSaveDataInfo.m_sLogDirectoryPath, sDataType);
 
-            if (cSaveDataInfo.m_bGetSelf == false)
+            if (Directory.Exists(sDataTypeDirectoryPath) == false)
+                Directory.CreateDirectory(sDataTypeDirectoryPath);
+
+            double dFrequency = 0.0;
+            string sDataFileName = "";
+
+            if (cSaveDataInfo.m_bGetSelf == true)
+            {
+                int nSelfPH2Sum = ElanConvert.Convert2SelfPH2SumInt(cSaveDataInfo.m_n_SELF_PH2E_LAT, cSaveDataInfo.m_n_SELF_PH2E_LMT, cSaveDataInfo.m_n_SELF_PH2_LAT,
+                                                                    cSaveDataInfo.m_n_SELF_PH2);
+                dFrequency = ElanConvert.Convert2Frequency(cSaveDataInfo.m_n_SELF_PH1, nSelfPH2Sum);
+
+                if (bSetRepeatIndex == false)
+                {
+                    sDataFileName = string.Format("Report_{0}_{1}_{2}_{3}_{4}_{5}", dFrequency.ToString("0.000"), cSaveDataInfo.m_n_SELF_PH1.ToString("x2").ToUpper(),
+                                                  cSaveDataInfo.m_n_SELF_PH2E_LMT.ToString("x2").ToUpper(), 
+                                                  nSelfPH2Sum.ToString("x2").ToUpper(),
+                                                  cSaveDataInfo.m_nSelf_DFT_NUM.ToString("x2").ToUpper(), cSaveDataInfo.m_sSelfTraceType);
+                }
+                else
+                {
+                    sDataFileName = string.Format("Report_{0}_{1}_{2}_{3}_{4}_{5}_{6}", dFrequency.ToString("0.000"), cSaveDataInfo.m_n_SELF_PH1.ToString("x2").ToUpper(),
+                                                  cSaveDataInfo.m_n_SELF_PH2E_LMT.ToString("x2").ToUpper(), 
+                                                  nSelfPH2Sum.ToString("x2").ToUpper(),
+                                                  cSaveDataInfo.m_nSelf_DFT_NUM.ToString("x2").ToUpper(), cSaveDataInfo.m_sSelfTraceType,
+                                                  nRepeatIndex);
+                }
+
+                if (cSaveDataInfo.m_bSetSelfKSequence == true)
+                    sDataFileName = string.Format("{0}_P{1:00}N{2:00}", sDataFileName, cSaveDataInfo.m_nSelfNCPValue, cSaveDataInfo.m_nSelfNCNValue);
+            }
+            else
+            {
                 dFrequency = ElanConvert.Convert2Frequency(cSaveDataInfo.m_nPH1, cSaveDataInfo.m_nPH2);
+
+                if (bSetRepeatIndex == false)
+                {
+                    sDataFileName = string.Format("Report_{0}_{1}_{2}", dFrequency.ToString("0.000"), cSaveDataInfo.m_nPH1.ToString("x2").ToUpper(),
+                                                  cSaveDataInfo.m_nPH2.ToString("x2").ToUpper());
+                }
+                else
+                {
+                    sDataFileName = string.Format("Report_{0}_{1}_{2}_{3}", dFrequency.ToString("0.000"), cSaveDataInfo.m_nPH1.ToString("x2").ToUpper(),
+                                                  cSaveDataInfo.m_nPH2.ToString("x2").ToUpper(), nRepeatIndex);
+                }
+            }
+
+            string sDataFilePath = string.Format(@"{0}\{1}.txt", sDataTypeDirectoryPath, sDataFileName);
 
             m_sDataFilePath = sDataFilePath;
 
@@ -221,7 +164,16 @@ namespace FingerAutoTuning
                         }
                     }
 
-                    m_sw.WriteLine(GetSelfTraceSeparator(cSaveDataInfo.m_sSelfTracePart));
+                    if (cSaveDataInfo.m_sSelfTracePart == MainConstantParameter.m_sOddTrace)
+                        m_sw.WriteLine("====================Odd Trace========================");
+                    else if (cSaveDataInfo.m_sSelfTracePart == MainConstantParameter.m_sEvenTrace)
+                        m_sw.WriteLine("====================Even Trace=======================");
+                    else if (cSaveDataInfo.m_sSelfTracePart == MainConstantParameter.m_sForwardTrace)
+                        m_sw.WriteLine("====================Forward Trace=======================");
+                    else if (cSaveDataInfo.m_sSelfTracePart == MainConstantParameter.m_sBackwardTrace)
+                        m_sw.WriteLine("====================Backward Trace======================");
+                    else
+                        m_sw.WriteLine("=====================================================");
                 }
                 catch
                 {
@@ -289,7 +241,10 @@ namespace FingerAutoTuning
             bool bError = false;
             int nFrameNumber = 1;
 
-            string sDataTypeDirectoryPath = EnsureDataTypeDirectoryPath(cSaveDataInfo.m_sLogDirectoryPath, sDataType);
+            string sDataTypeDirectoryPath = string.Format(@"{0}\{1}", cSaveDataInfo.m_sLogDirectoryPath, sDataType);
+
+            if (Directory.Exists(sDataTypeDirectoryPath) == false)
+                Directory.CreateDirectory(sDataTypeDirectoryPath);
 
             double dFrequency = ElanConvert.Convert2Frequency(cSaveDataInfo.m_nPH1, cSaveDataInfo.m_nPH2);
 
@@ -381,12 +336,38 @@ namespace FingerAutoTuning
             bool bError = false;
             int nFrameNumber = cSaveDataInfo.m_nFrameNumber;
 
-            string sDataTypeDirectoryPath = EnsureDataTypeDirectoryPath(cSaveDataInfo.m_sLogDirectoryPath, sDataType);
-            string sDataFileName = BuildFrameDataFileName(cSaveDataInfo, sDataType);
-            double dFrequency = 0.0;
+            string sDataTypeDirectoryPath = string.Format(@"{0}\{1}", cSaveDataInfo.m_sLogDirectoryPath, sDataType);
 
-            if (cSaveDataInfo.m_bRawADCSweep == false && cSaveDataInfo.m_bGetSelf == false)
+            if (Directory.Exists(sDataTypeDirectoryPath) == false)
+                Directory.CreateDirectory(sDataTypeDirectoryPath);
+
+            double dFrequency = 0.0;
+            string sDataFileName = "";
+
+            if (cSaveDataInfo.m_bRawADCSweep == true)
+            {
+                sDataFileName = string.Format("{0}_{1}_{2}_{3}_{4}", sDataType, cSaveDataInfo.m_nSELC, cSaveDataInfo.m_nVSEL, cSaveDataInfo.m_nLG, cSaveDataInfo.m_nSELGM);
+            }
+            else if (cSaveDataInfo.m_bGetSelf == true)
+            {
+                int nSelfPH2Sum = ElanConvert.Convert2SelfPH2SumInt(cSaveDataInfo.m_n_SELF_PH2E_LAT, cSaveDataInfo.m_n_SELF_PH2E_LMT, 
+                                                                    cSaveDataInfo.m_n_SELF_PH2_LAT, cSaveDataInfo.m_n_SELF_PH2);
+                dFrequency = ElanConvert.Convert2Frequency(cSaveDataInfo.m_n_SELF_PH1, nSelfPH2Sum);
+                sDataFileName = string.Format("{0}_{1}_{2}_{3}_{4}_{5}_{6}", sDataType, dFrequency.ToString("0.000"), 
+                                              cSaveDataInfo.m_n_SELF_PH1.ToString("x2").ToUpper(),
+                                              cSaveDataInfo.m_n_SELF_PH2E_LMT.ToString("x2").ToUpper(),
+                                              nSelfPH2Sum.ToString("x2").ToUpper(), cSaveDataInfo.m_sSelfTraceType,
+                                              cSaveDataInfo.m_nSelf_DFT_NUM.ToString("x4").ToUpper());
+
+                if (cSaveDataInfo.m_bSetSelfKSequence == true)
+                    sDataFileName = string.Format("{0}_P{1:00}N{2:00}", sDataFileName, cSaveDataInfo.m_nSelfNCPValue, cSaveDataInfo.m_nSelfNCNValue);
+            }
+            else
+            {
                 dFrequency = ElanConvert.Convert2Frequency(cSaveDataInfo.m_nPH1, cSaveDataInfo.m_nPH2);
+                sDataFileName = string.Format("{0}_{1}_{2}_{3}", sDataType, dFrequency.ToString("0.000"), cSaveDataInfo.m_nPH1.ToString("x2").ToUpper(),
+                                              cSaveDataInfo.m_nPH2.ToString("x2").ToUpper());
+            }
 
             string sDataFilePath = string.Format(@"{0}\{1}.csv", sDataTypeDirectoryPath, sDataFileName);
 
@@ -633,12 +614,53 @@ namespace FingerAutoTuning
             if (bGetSignalData == true)
                 sState = "(S)";
 
-            string sDataTypeDirectoryPath = EnsureDataTypeDirectoryPath(cSaveDataInfo.m_sLogDirectoryPath, sDataType);
-            string sDataFileName = BuildReportFileName(cSaveDataInfo, nRepeatIndex, bSetRepeatIndex, false);
-            double dFrequency = 0.0;
+            string sDataTypeDirectoryPath = string.Format(@"{0}\{1}", cSaveDataInfo.m_sLogDirectoryPath, sDataType);
 
-            if (cSaveDataInfo.m_bGetSelf == false)
+            if (Directory.Exists(sDataTypeDirectoryPath) == false)
+                Directory.CreateDirectory(sDataTypeDirectoryPath);
+
+            double dFrequency = 0.0;
+            string sDataFileName = "";
+
+            if (cSaveDataInfo.m_bGetSelf == true)
+            {
+                int nSelfPH2Sum = ElanConvert.Convert2SelfPH2SumInt(cSaveDataInfo.m_n_SELF_PH2E_LAT, cSaveDataInfo.m_n_SELF_PH2E_LMT, cSaveDataInfo.m_n_SELF_PH2_LAT, 
+                                                                    cSaveDataInfo.m_n_SELF_PH2);
+                dFrequency = ElanConvert.Convert2Frequency(cSaveDataInfo.m_n_SELF_PH1, nSelfPH2Sum);
+
+                if (bSetRepeatIndex == false)
+                {
+                    sDataFileName = string.Format("Report_{0}_{1}_{2}_{3}_{4}_{5}", dFrequency.ToString("0.000"), 
+                                                  cSaveDataInfo.m_n_SELF_PH1.ToString("x2").ToUpper(),
+                                                  cSaveDataInfo.m_n_SELF_PH2E_LMT.ToString("x2").ToUpper(),
+                                                  nSelfPH2Sum.ToString("x2").ToUpper(),
+                                                  cSaveDataInfo.m_nSelf_DFT_NUM.ToString("x2").ToUpper(), cSaveDataInfo.m_sSelfTraceType);
+                }
+                else
+                {
+                    sDataFileName = string.Format("Report_{0}_{1}_{2}_{3}_{4}_{5}_{6}", dFrequency.ToString("0.000"), 
+                                                  cSaveDataInfo.m_n_SELF_PH1.ToString("x2").ToUpper(),
+                                                  cSaveDataInfo.m_n_SELF_PH2E_LMT.ToString("x2").ToUpper(),
+                                                  nSelfPH2Sum.ToString("x2").ToUpper(),
+                                                  cSaveDataInfo.m_nSelf_DFT_NUM.ToString("x2").ToUpper(), cSaveDataInfo.m_sSelfTraceType,
+                                                  nRepeatIndex);
+                }
+            }
+            else
+            {
                 dFrequency = ElanConvert.Convert2Frequency(cSaveDataInfo.m_nPH1, cSaveDataInfo.m_nPH2);
+
+                if (bSetRepeatIndex == false)
+                {
+                    sDataFileName = string.Format("Report_{0}_{1}_{2}", dFrequency.ToString("0.000"), cSaveDataInfo.m_nPH1.ToString("x2").ToUpper(),
+                                                  cSaveDataInfo.m_nPH2.ToString("x2").ToUpper());
+                }
+                else
+                {
+                    sDataFileName = string.Format("Report_{0}_{1}_{2}_{3}", dFrequency.ToString("0.000"), cSaveDataInfo.m_nPH1.ToString("x2").ToUpper(),
+                                                  cSaveDataInfo.m_nPH2.ToString("x2").ToUpper(), nRepeatIndex);
+                }
+            }
 
             string sDataFilePath = string.Format(@"{0}\{1}.txt", sDataTypeDirectoryPath, sDataFileName);
 
@@ -709,7 +731,16 @@ namespace FingerAutoTuning
                     }
                 }
 
-                sw.WriteLine(GetSelfTraceSeparator(cSaveDataInfo.m_sSelfTracePart));
+                if (cSaveDataInfo.m_sSelfTracePart == MainConstantParameter.m_sOddTrace)
+                    sw.WriteLine("====================Odd Trace========================");
+                else if (cSaveDataInfo.m_sSelfTracePart == MainConstantParameter.m_sEvenTrace)
+                    sw.WriteLine("====================Even Trace=======================");
+                else if (cSaveDataInfo.m_sSelfTracePart == MainConstantParameter.m_sForwardTrace)
+                    sw.WriteLine("====================Forward Trace=======================");
+                else if (cSaveDataInfo.m_sSelfTracePart == MainConstantParameter.m_sBackwardTrace)
+                    sw.WriteLine("====================Backward Trace======================");
+                else
+                    sw.WriteLine("=====================================================");
 
                 foreach(byte[] byteReport_Array in byteReport_List)
                 {

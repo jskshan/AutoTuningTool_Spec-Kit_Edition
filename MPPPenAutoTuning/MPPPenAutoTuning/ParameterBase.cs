@@ -158,10 +158,17 @@ namespace MPPPenAutoTuningParameter
             else
                 sOutputValue = sDefault;
 
-            string sDefaultOverrideValue = ReadDefaultOverrideValue(sSection, sKey);
+            if (File.Exists(m_sDefaultFilePath) == true)
+            {
+                StringBuilder sb = new StringBuilder(255);
+                int nValue = Win32.GetPrivateProfileString(sSection, sKey, "DataNotExist!\\[N/A]", sb, 255, m_sDefaultFilePath);
 
-            if (sDefaultOverrideValue != null)
-                sOutputValue = sDefaultOverrideValue;
+                if (sb != null)
+                {
+                    if (sb.ToString() != "DataNotExist!\\[N/A]")
+                        sOutputValue = sb.ToString();
+                }
+            }
 
             return sOutputValue;
         }
@@ -178,32 +185,19 @@ namespace MPPPenAutoTuningParameter
             else
                 sOutputValue = sDefault;
 
-            string sDefaultOverrideValue = ReadDefaultOverrideValue(sSection, sKey);
+            if (File.Exists(m_sDefaultFilePath) == true)
+            {
+                StringBuilder sb = new StringBuilder(255);
+                int nValue = Win32.GetPrivateProfileString(sSection, sKey, "DataNotExist!\\[N/A]", sb, 255, m_sDefaultFilePath);
 
-            if (sDefaultOverrideValue != null)
-                sOutputValue = sDefaultOverrideValue;
+                if (sb != null)
+                {
+                    if (sb.ToString() != "DataNotExist!\\[N/A]")
+                        sOutputValue = sb.ToString();
+                }
+            }
 
             return sOutputValue;
-        }
-
-        /// <summary>
-        /// 讀取 Default.ini 中的 override 值；若存在則依既有設計覆蓋 setting 檔內容。
-        /// </summary>
-        private static string ReadDefaultOverrideValue(string sSection, string sKey)
-        {
-            if (File.Exists(m_sDefaultFilePath) == false)
-                return null;
-
-            StringBuilder sb = new StringBuilder(255);
-            int nValue = Win32.GetPrivateProfileString(sSection, sKey, "DataNotExist!\\[N/A]", sb, 255, m_sDefaultFilePath);
-
-            if (sb == null)
-                return null;
-
-            if (sb.ToString() == "DataNotExist!\\[N/A]")
-                return null;
-
-            return sb.ToString();
         }
 
         // 傳入Parameter Name與Index，傳回Parameter_Index

@@ -13,55 +13,6 @@ namespace FingerAutoTuning
         private frmMain m_cfrmParent = null;
         private MainStep m_eStep;
 
-        /// <summary>
-        /// 依目前 MainStep 建立對應的 AnalysisFlow，將流程映射維持在 DataAnalysis 集中管理
-        /// </summary>
-        private AnalysisFlow CreateAnalysisFlow(frmMain.FlowStep cFlowStep, string sLogDirectoryPath, string sH5LogDirectoryPath, bool bGenerateH5Data, frmMain cfrmParent, string sProjectName)
-        {
-            switch (m_eStep)
-            {
-                case MainStep.FrequencyRank_Phase1:
-                    return new AnalysisFlow_FRPH1(cFlowStep, sLogDirectoryPath, sH5LogDirectoryPath, bGenerateH5Data, cfrmParent, sProjectName);
-
-                case MainStep.FrequencyRank_Phase2:
-                    return new AnalysisFlow_FRPH2(cFlowStep, sLogDirectoryPath, sH5LogDirectoryPath, bGenerateH5Data, cfrmParent, sProjectName);
-
-                case MainStep.AC_FrequencyRank:
-                    return new AnalysisFlow_ACFR(cFlowStep, sLogDirectoryPath, sH5LogDirectoryPath, bGenerateH5Data, cfrmParent, sProjectName);
-
-                case MainStep.Raw_ADC_Sweep:
-                    return new AnalysisFlow_RawADCS(cFlowStep, sLogDirectoryPath, sH5LogDirectoryPath, bGenerateH5Data, cfrmParent, sProjectName);
-
-                case MainStep.Self_FrequencySweep:
-                    return new AnalysisFlow_SelfFS(cFlowStep, sLogDirectoryPath, sH5LogDirectoryPath, bGenerateH5Data, cfrmParent, sProjectName);
-
-                case MainStep.Self_NCPNCNSweep:
-                    return new AnalysisFlow_SelfPNS(cFlowStep, sLogDirectoryPath, sH5LogDirectoryPath, bGenerateH5Data, cfrmParent, sProjectName);
-
-                default:
-                    return null;
-            }
-        }
-
-        /// <summary>
-        /// 統一執行 AnalysisFlow 的 parameter load、特例前置注入與 MainFlow 呼叫，避免重複的型別轉型樣板碼
-        /// </summary>
-        private bool ExecuteAnalysisFlow(ref string sErrorMessage, string sSkipFreqSetFilePath)
-        {
-            if (m_cAnalysisFlowProcess == null)
-            {
-                sErrorMessage = string.Format("Unsupported Analysis Flow: {0}", m_eStep);
-                return false;
-            }
-
-            m_cAnalysisFlowProcess.LoadAnalysisParameter();
-
-            if (m_eStep == MainStep.FrequencyRank_Phase1)
-                ((AnalysisFlow_FRPH1)m_cAnalysisFlowProcess).GetSkipFreqSetFilePath(sSkipFreqSetFilePath);
-
-            return m_cAnalysisFlowProcess.MainFlow(ref sErrorMessage);
-        }
-
         public bool ExecuteMainWorkFlow(
             ref string m_sErrorMessage, frmMain.FlowStep cFlowStep, string sLogDirectoryPath, string sH5LogDirectoryPath, bool bGenerateH5Data,
             frmMain cfrmParent, string sProjectName, string sSkipFreqSetFilePath)
@@ -74,9 +25,75 @@ namespace FingerAutoTuning
 
             OutputMessage("[State]Analysis Flow");
 
-            m_cAnalysisFlowProcess = CreateAnalysisFlow(cFlowStep, sLogDirectoryPath, sH5LogDirectoryPath, bGenerateH5Data, cfrmParent, sProjectName);
+            bool bFlowComplete = true;
 
-            return ExecuteAnalysisFlow(ref m_sErrorMessage, sSkipFreqSetFilePath);
+            if (m_eStep == MainStep.FrequencyRank_Phase1)
+                m_cAnalysisFlowProcess = new AnalysisFlow_FRPH1(cFlowStep, sLogDirectoryPath, sH5LogDirectoryPath, bGenerateH5Data, cfrmParent, sProjectName);
+            else if (m_eStep == MainStep.FrequencyRank_Phase2)
+                m_cAnalysisFlowProcess = new AnalysisFlow_FRPH2(cFlowStep, sLogDirectoryPath, sH5LogDirectoryPath, bGenerateH5Data, cfrmParent, sProjectName);
+            else if (m_eStep == MainStep.AC_FrequencyRank)
+                m_cAnalysisFlowProcess = new AnalysisFlow_ACFR(cFlowStep, sLogDirectoryPath, sH5LogDirectoryPath, bGenerateH5Data, cfrmParent, sProjectName);
+            else if (m_eStep == MainStep.Raw_ADC_Sweep)
+                m_cAnalysisFlowProcess = new AnalysisFlow_RawADCS(cFlowStep, sLogDirectoryPath, sH5LogDirectoryPath, bGenerateH5Data, cfrmParent, sProjectName);
+            else if (m_eStep == MainStep.Self_FrequencySweep)
+                m_cAnalysisFlowProcess = new AnalysisFlow_SelfFS(cFlowStep, sLogDirectoryPath, sH5LogDirectoryPath, bGenerateH5Data, cfrmParent, sProjectName);
+            else if (m_eStep == MainStep.Self_NCPNCNSweep)
+                m_cAnalysisFlowProcess = new AnalysisFlow_SelfPNS(cFlowStep, sLogDirectoryPath, sH5LogDirectoryPath, bGenerateH5Data, cfrmParent, sProjectName);
+
+            m_cAnalysisFlowProcess.LoadAnalysisParameter();
+
+            if (m_eStep == MainStep.FrequencyRank_Phase1)
+            {
+                AnalysisFlow_FRPH1 cFlowItem = (AnalysisFlow_FRPH1)m_cAnalysisFlowProcess;
+
+                cFlowItem.LoadAnalysisParameter();
+
+                cFlowItem.GetSkipFreqSetFilePath(sSkipFreqSetFilePath);
+
+                bFlowComplete = cFlowItem.MainFlow(ref m_sErrorMessage);
+            }
+            else if (m_eStep == MainStep.FrequencyRank_Phase2)
+            {
+                AnalysisFlow_FRPH2 cFlowItem = (AnalysisFlow_FRPH2)m_cAnalysisFlowProcess;
+
+                cFlowItem.LoadAnalysisParameter();
+
+                bFlowComplete = cFlowItem.MainFlow(ref m_sErrorMessage);
+            }
+            else if (m_eStep == MainStep.AC_FrequencyRank)
+            {
+                AnalysisFlow_ACFR cFlowItem = (AnalysisFlow_ACFR)m_cAnalysisFlowProcess;
+
+                cFlowItem.LoadAnalysisParameter();
+
+                bFlowComplete = cFlowItem.MainFlow(ref m_sErrorMessage);
+            }
+            else if (m_eStep == MainStep.Raw_ADC_Sweep)
+            {
+                AnalysisFlow_RawADCS cFlowItem = (AnalysisFlow_RawADCS)m_cAnalysisFlowProcess;
+
+                cFlowItem.LoadAnalysisParameter();
+
+                bFlowComplete = cFlowItem.MainFlow(ref m_sErrorMessage);
+            }
+            else if (m_eStep == MainStep.Self_FrequencySweep)
+            {
+                AnalysisFlow_SelfFS cFlowItem = (AnalysisFlow_SelfFS)m_cAnalysisFlowProcess;
+
+                cFlowItem.LoadAnalysisParameter();
+
+                bFlowComplete = cFlowItem.MainFlow(ref m_sErrorMessage);
+            }
+            else if (m_eStep == MainStep.Self_NCPNCNSweep)
+            {
+                AnalysisFlow_SelfPNS cFlowItem = (AnalysisFlow_SelfPNS)m_cAnalysisFlowProcess;
+
+                cFlowItem.LoadAnalysisParameter();
+
+                bFlowComplete = cFlowItem.MainFlow(ref m_sErrorMessage);
+            }
+
+            return bFlowComplete;
         }
 
         private void OutputMessage(string sMessage, bool bWarning = false)

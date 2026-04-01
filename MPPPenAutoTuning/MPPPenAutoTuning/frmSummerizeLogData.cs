@@ -566,47 +566,6 @@ namespace MPPPenAutoTuning
             sDirectoryPath_List.Sort();
         }
 
-        // 集中 output 資料夾命名規則，讓 UI 與驗證腳本共用相同邏輯。
-        private string BuildSummaryOutputFolderName()
-        {
-            if (ckbxOutputFolderName.Checked == true)
-                return tbxOutputFolderName.Text;
-
-            string[] sSplitText_Array = m_sDirectoryName.Split('_');
-            string sOutputFolderName = "";
-            int nMaxCount = (sSplitText_Array.Length < 3) ? sSplitText_Array.Length : 3;
-
-            for (int nTextIndex = 0; nTextIndex < nMaxCount; nTextIndex++)
-            {
-                if (nTextIndex == nMaxCount - 1)
-                    sOutputFolderName = string.Format("{0}{1}", sOutputFolderName, sSplitText_Array[nTextIndex]);
-                else
-                    sOutputFolderName = string.Format("{0}{1}_", sOutputFolderName, sSplitText_Array[nTextIndex]);
-            }
-
-            return string.Format("output_{0}", sOutputFolderName);
-        }
-
-        // 集中 summary 輸出資料夾建立，避免各輸出方法自行重複處理目錄。
-        private string EnsureSummaryOutputFolderPath()
-        {
-            string sOutputFolderName = BuildSummaryOutputFolderName();
-
-            m_sOutputFolderPath = string.Format(@"{0}\{1}", m_sDefaultOutputFolderPath, sOutputFolderName);
-
-            if (Directory.Exists(m_sOutputFolderPath) == false)
-                Directory.CreateDirectory(m_sOutputFolderPath);
-
-            return m_sOutputFolderPath;
-        }
-
-        // 集中 summary 輸出檔名與完整路徑規則，避免固定檔名散落在流程內。
-        private string GetSummaryOutputFilePath(string sFileName)
-        {
-            string sOutputFolderPath = EnsureSummaryOutputFolderPath();
-            return string.Format(@"{0}\{1}", sOutputFolderPath, sFileName);
-        }
-
         private void CopyDataToExcel(string[] sFileName_Array)
         {
             OutputMessage("In progress...");
@@ -614,11 +573,35 @@ namespace MPPPenAutoTuning
             string sDate = DateTime.Now.ToString("yyyy-MM-dd");
             string sTime = DateTime.Now.ToString("HH:mm");
 
-            EnsureSummaryOutputFolderPath();
+            string[] sSplitText_Array = m_sDirectoryName.Split('_');
 
-            string sFileNotFoundPath = GetSummaryOutputFilePath("file_not_found.txt");
-            string sLogSummaryPath = GetSummaryOutputFilePath("Log Summary.xlsx");
-            string sAllDataPath = GetSummaryOutputFilePath("df_all.xlsx");
+            string sOutputFolderName = "";
+
+            if (ckbxOutputFolderName.Checked == true)
+                sOutputFolderName = tbxOutputFolderName.Text;
+            else
+            {
+                int nMaxCount = (sSplitText_Array.Length < 3) ? sSplitText_Array.Length : 3;
+
+                for (int nTextIndex = 0; nTextIndex < nMaxCount; nTextIndex++)
+                {
+                    if (nTextIndex == nMaxCount - 1)
+                        sOutputFolderName = string.Format("{0}{1}", sOutputFolderName, sSplitText_Array[nTextIndex]);
+                    else
+                        sOutputFolderName = string.Format("{0}{1}_", sOutputFolderName, sSplitText_Array[nTextIndex]);
+                }
+
+                sOutputFolderName = string.Format("output_{0}", sOutputFolderName);
+            }
+
+            m_sOutputFolderPath = string.Format(@"{0}\{1}", m_sDefaultOutputFolderPath, sOutputFolderName);
+
+            if (Directory.Exists(m_sOutputFolderPath) == false)
+                Directory.CreateDirectory(m_sOutputFolderPath);
+
+            string sFileNotFoundPath = string.Format(@"{0}\file_not_found.txt", m_sOutputFolderPath);
+            string sLogSummaryPath = string.Format(@"{0}\Log Summary.xlsx", m_sOutputFolderPath);
+            string sAllDataPath = string.Format(@"{0}\df_all.xlsx", m_sOutputFolderPath);
 
             List<string> sFilePath_List = new List<string>();
             List<string> sDirectoryPath_List = new List<string>();
@@ -1564,7 +1547,7 @@ namespace MPPPenAutoTuning
 
         private void ChangeAllDataFormat()
         {
-            string sAllModifyDataPath = GetSummaryOutputFilePath("df_all_M.xlsx");
+            string sAllModifyDataPath = string.Format(@"{0}\df_all_M.xlsx", m_sOutputFolderPath);
 
             DataTable dtAllModify = GetAllModifyDataTable();
 

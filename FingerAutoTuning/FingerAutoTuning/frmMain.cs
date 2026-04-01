@@ -1533,50 +1533,6 @@ namespace FingerAutoTuning
             rjtbtnLoadData.Checked = (sLoadData == "1") ? true : false;
         }
 
-        /// <summary>
-        /// 重設 UI 執行上下文，供重新開始或手動 Reset 時共用，避免事件處理器重複拼裝 Ready 狀態。
-        /// </summary>
-        private void ResetExecutionUiContext(bool bResetStatusStrip)
-        {
-            SetlblStepBackColor(MainStep.Else, true);
-
-            lblStatus.ForeColor = Color.Blue;
-            lblStatus.Text = "Ready";
-
-            lblSecondaryMessage.ForeColor = Color.Red;
-            lblSecondaryMessage.Text = "";
-
-            ResizelblCurrentStepFont("");
-
-            rtbxMessage.Clear();
-            m_nCurrentStepIndex = 0;
-            m_nCurrentExecuteIndex = 0;
-
-            ClearResultTabPageContent();
-
-            if (bResetStatusStrip == true)
-            {
-                toolstripstatuslabelStatus.Text = "";
-                InitialstatusstripMessage(0, "Ready");
-            }
-        }
-
-        /// <summary>
-        /// 將 UI 切換到執行中顯示狀態，讓 Start 事件專注於流程啟動本身。
-        /// </summary>
-        private void SetExecutionUiState()
-        {
-            SetlblStepBackColor(MainStep.Else, true);
-
-            lblStatus.ForeColor = Color.Blue;
-            lblStatus.Text = "Execute";
-
-            lblSecondaryMessage.ForeColor = Color.Red;
-            lblSecondaryMessage.Text = "";
-
-            ResizelblCurrentStepFont("");
-        }
-
         private void btnNewStart_Click(object sender, EventArgs e)
         {
             WriteDebugLog("Action - Start Button(Start Finger AutoTuning Flow)");
@@ -1588,7 +1544,19 @@ namespace FingerAutoTuning
             //if (cbxLoadData.Checked == true || m_bReset == true)
             if (rjtbtnLoadData.Checked == true || m_bReset == true)
             {
-                ResetExecutionUiContext(false);
+                SetlblStepBackColor(MainStep.Else, true);
+
+                lblStatus.ForeColor = Color.Blue;
+                lblStatus.Text = "Ready";
+
+                lblSecondaryMessage.ForeColor = Color.Red;
+                lblSecondaryMessage.Text = "";
+
+                rtbxMessage.Clear();
+                m_nCurrentStepIndex = 0;
+                m_nCurrentExecuteIndex = 0;
+
+                ClearResultTabPageContent();
             }
 
             /*
@@ -1602,7 +1570,15 @@ namespace FingerAutoTuning
 
             //frmMain frmParent = (frmMain)Tag;
 
-            SetExecutionUiState();
+            SetlblStepBackColor(MainStep.Else, true);
+
+            lblStatus.ForeColor = Color.Blue;
+            lblStatus.Text = "Execute";
+
+            lblSecondaryMessage.ForeColor = Color.Red;
+            lblSecondaryMessage.Text = "";
+
+            ResizelblCurrentStepFont("");
 
             //m_bLoadData = cbxLoadData.Checked;
             m_bLoadData = rjtbtnLoadData.Checked;
@@ -1697,8 +1673,25 @@ namespace FingerAutoTuning
 
             m_bReset = true;
             m_eRecordState = AppCoreDefine.RecordState.NORMAL;
+            m_nCurrentStepIndex = 0;
+            m_nCurrentExecuteIndex = 0;
 
-            ResetExecutionUiContext(true);
+            SetlblStepBackColor(MainStep.Else, true);
+
+            lblStatus.ForeColor = Color.Blue;
+            lblStatus.Text = "Ready";
+
+            lblSecondaryMessage.ForeColor = Color.Red;
+            lblSecondaryMessage.Text = "";
+
+            ResizelblCurrentStepFont("");
+            toolstripstatuslabelStatus.Text = "";
+
+            rtbxMessage.Clear();
+
+            ClearResultTabPageContent();
+
+            InitialstatusstripMessage(0, "Ready");
 
             //ButtonOnOffOption(btnReset, "ResetBtn_Enable", true);
             btnNewReset.Enabled = true;
