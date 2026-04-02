@@ -596,29 +596,33 @@ protected void InitializeParameter(FlowStep cFlowStep)  // 初始化基本參數
 - `GetData()` — 取得資料
 - `ComputeAndOutputResult()` — 計算並輸出結果
 
-### 9.4 17 個子類分類表
+### 9.4 16 個子類分類表
 
-| # | 檔案名 | 歸納分類 | 對應步驟 |
-|---|--------|----------|----------|
-| 1 | AnalysisFlow_NoiseHover1stNO.cs | 噪音 | MainTuningStep.NO, SubTuningStep.HOVER_1ST |
-| 2 | AnalysisFlow_NoiseHover2ndNO.cs | 噪音 | MainTuningStep.NO, SubTuningStep.HOVER_2ND |
-| 3 | AnalysisFlow_NoiseContactNO.cs | 噪音 | MainTuningStep.NO, SubTuningStep.CONTACT |
-| 4 | AnalysisFlow_NoiseTRxSHoverNO.cs | 噪音 | MainTuningStep.NO, SubTuningStep.HOVERTRxS |
-| 5 | AnalysisFlow_NoiseTRxSContactNO.cs | 噪音 | MainTuningStep.NO, SubTuningStep.CONTACTTRxS |
-| 6 | AnalysisFlow_TiltNoisePTHF.cs | 傾角噪音 | MainTuningStep.TILTNO, SubTuningStep.TILTNO_PTHF |
-| 7 | AnalysisFlow_TiltNoiseBHF.cs | 傾角噪音 | MainTuningStep.TILTNO, SubTuningStep.TILTNO_BHF |
-| 8 | AnalysisFlow_TiltTuningPTHF.cs | 傾角調校 | MainTuningStep.TILTTUNING, SubTuningStep.TILTTUNING_PTHF |
-| 9 | AnalysisFlow_TiltTuningBHF.cs | 傾角調校 | MainTuningStep.TILTTUNING, SubTuningStep.TILTTUNING_BHF |
-| 10 | AnalysisFlow_DigiGainTuning.cs | 數位增益 | MainTuningStep.DIGIGAINTUNING, SubTuningStep.DIGIGAIN |
-| 11 | AnalysisFlow_TPGainTuning.cs | TP增益 | MainTuningStep.TPGAINTUNING, SubTuningStep.TP_GAIN |
-| 12 | AnalysisFlow_PeakCheckHover1st.cs | 峰值檢查 | MainTuningStep.PEAKCHECKTUNING, SubTuningStep.PCHOVER_1ST |
-| 13 | AnalysisFlow_PeakCheckHover2nd.cs | 峰值檢查 | MainTuningStep.PEAKCHECKTUNING, SubTuningStep.PCHOVER_2ND |
-| 14 | AnalysisFlow_PeakCheckContact.cs | 峰值檢查 | MainTuningStep.PEAKCHECKTUNING, SubTuningStep.PCCONTACT |
-| 15 | AnalysisFlow_DigitalTuning.cs | 數位調校 | MainTuningStep.DIGITALTUNING |
-| 16 | AnalysisFlow_PressureTuning.cs | 壓力 | MainTuningStep.PRESSURETUNING, SubTuningStep.PRESSURETABLE |
-| 17 | AnalysisFlow_LinearityTuning.cs | 線性度 | MainTuningStep.LINEARITYTUNING, SubTuningStep.LINEARITYTABLE |
+> 注：分類為文件歸納，程式碼中無此分類定義。分派邏輯來源為 `Class/DataAnalysis.cs`。
 
-> 注：分類為文件歸納，程式碼中無此分類定義。各 AnalysisFlow 的 SubTuningStep 對應為事實依據。
+| # | 類別名稱 | 繼承自 | 歸納分類 | MainTuningStep | SubTuningStep / 條件 |
+|---|----------|--------|----------|----------------|---------------------|
+| 1 | `AnalysisFlow_Noise` | `AnalysisFlow` | 噪音 | NO | 全部 NO 子步驟（預設，非 Gen8、非 TestMode） |
+| 2 | `AnalysisFlow_Noise_Gen8` | `AnalysisFlow_Noise` | 噪音 (Gen8) | NO | `nICSolutionType == Gen8` |
+| 3 | `AnalysisFlow_Noise_TestMode` | `AnalysisFlow` | 噪音 (TestMode) | NO | `ParamAutoTuning.m_nNoiseDataType == 1` |
+| 4 | `AnalysisFlow_TiltNoise` | `AnalysisFlow` | 傾角噪音 | TILTNO | TILTNO_PTHF, TILTNO_BHF（預設，非 Gen8） |
+| 5 | `AnalysisFlow_TiltNoise_Gen8` | `AnalysisFlow_TiltNoise` | 傾角噪音 (Gen8) | TILTNO | `nICSolutionType == Gen8` |
+| 6 | `AnalysisFlow_DigiGainTuning` | `AnalysisFlow` | 數位增益 | DIGIGAINTUNING | 直接對應 |
+| 7 | `AnalysisFlow_TPGainTuning` | `AnalysisFlow` | TP增益 | TPGAINTUNING | 直接對應 |
+| 8 | `AnalysisFlow_PeakCheck` | `AnalysisFlow` | 峰值檢查 | PEAKCHECKTUNING | PCHOVER_1ST, PCHOVER_2ND, PCCONTACT |
+| 9 | `AnalysisFlow_DTNormal` | `AnalysisFlow` | 數位調校 | DIGITALTUNING | HOVER_1ST, HOVER_2ND, CONTACT |
+| 10 | `AnalysisFlow_DTTRxS` | `AnalysisFlow` | 數位調校 (TRxS) | DIGITALTUNING | HOVERTRxS, CONTACTTRxS |
+| 11 | `AnalysisFlow_TiltTuning` | `AnalysisFlow` | 傾角調校 | TILTTUNING | TILTTUNING_PTHF, TILTTUNING_BHF |
+| 12 | `AnalysisFlow_PressureSetting` | `AnalysisFlow` | 壓力設定 | PRESSURETUNING | PRESSURESETTING |
+| 13 | `AnalysisFlow_PressureProtect` | `AnalysisFlow` | 壓力保護 | PRESSURETUNING | PRESSUREPROTECT |
+| 14 | `AnalysisFlow_PressureTable` | `AnalysisFlow` | 壓力表 | PRESSURETUNING | PRESSURETABLE |
+| 15 | `AnalysisFlow_LinearityTable` | `AnalysisFlow` | 線性度 | LINEARITYTUNING | 直接對應 |
+| 16 | `AnalysisFlow_Else` | `AnalysisFlow` | 後備 | (其他) | fallback（未被上述條件匹配） |
+
+**關鍵分派策略**：
+- **條件式分派（IC Solution Type）**：NO / TILTNO 步驟根據 Gen8/非 Gen8 選擇不同子類
+- **Sub-step 分派**：DIGITALTUNING / PRESSURETUNING 根據 SubTuningStep 值進一步分派
+- **特殊邏輯**：NO 步驟額外檢查 `m_nNoiseDataType` 判斷 TestMode
 
 ---
 
@@ -643,7 +647,7 @@ protected void InitializeParameter(FlowStep cFlowStep)  // 初始化基本參數
 | 事實項目 | 驗證方式 | 結果 |
 |----------|----------|------|
 | FingerAutoTuning 有 6 個 AnalysisFlow 分派目標 + 1 個基類 | `AnalysisFlow_*.cs` file count | ✅ 7 檔案 |
-| MPPPenAutoTuning 有 17 個 AnalysisFlow 子類 | `AnalysisFlow/*.cs` file count | ✅ 17 檔案 + 基類 |
+| MPPPenAutoTuning 有 16 個 AnalysisFlow 子類 | `AnalysisFlow/*.cs` file count | ✅ 17 檔案（16 子類 + 1 基類） |
 | ProcessFlow 有 7 個 partial class 檔案 | `ProcessFlow_*.cs` file count | ✅ 7 檔案 |
 | ElanCommandType 共 85 個 (Finger) | 逐一計數 | ✅ 56+2+27=85 |
 | MainStep 列舉 7 個值 | 程式碼對照 | ✅ 1-7 |

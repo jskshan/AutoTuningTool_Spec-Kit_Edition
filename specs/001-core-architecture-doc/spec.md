@@ -44,7 +44,7 @@
 
 ### User Story 3 — AI Agent 理解雙模組架構差異 (Priority: P3)
 
-作為一名 AI Agent，在收到跨模組修改請求時，我需要了解 FingerAutoTuning 與 MPPPenAutoTuning 的架構差異：前者用 AppCore 調度、後者用 ProcessFlow partial class；前者 7 個 AnalysisFlow、後者 17 個；分派機制的基準不同。
+作為一名 AI Agent，在收到跨模組修改請求時，我需要了解 FingerAutoTuning 與 MPPPenAutoTuning 的架構差異：前者用 AppCore 調度、後者用 ProcessFlow partial class；前者 7 個 AnalysisFlow、後者 16 個；分派機制的基準不同。
 
 **Why this priority**: 跨模組同步是 constitution 要求的連動更新機制，理解差異才能正確同步。
 
@@ -72,7 +72,7 @@
 - **FR-001**: Spec 必須記錄 FingerAutoTuning 的 AnalysisFlow 基類介面，包含所有虛擬方法簽名：`InitializeParameter()`、`InitializeSourceDataList()`、`LoadAnalysisParameter()`、`MainFlow(ref string sErrorMessage) → bool`；以及非虛方法 `GetDataCount() → bool`
 - **FR-002**: Spec 必須列出 FingerAutoTuning 的 AnalysisFlow 基類（`AnalysisFlow_Raw.cs`）及 6 個分派目標實作，對應 MainStep 列舉值：FRPH1(FrequencyRank_Phase1=1)、FRPH2(FrequencyRank_Phase2=2)、ACFR(AC_FrequencyRank=3)、RawADCS(Raw_ADC_Sweep=4)、SelfFS(Self_FrequencySweep=5)、SelfPNS(Self_NCPNCNSweep=6)。MainStep.Else=7 無對應分派實作
 - **FR-003**: Spec 必須記錄 MPPPenAutoTuning 的 AnalysisFlow 基類介面：唯一的 virtual 方法為 `LoadAnalysisParameter()`；`InitializeParameter(FlowStep)` 為 protected 非虛方法。子類慣例方法（convention-based, non-virtual）包括 `SetFileDirectory()`、`CheckDirectoryIsValid()`、`GetData()`、`ComputeAndOutputResult()`
-- **FR-004**: Spec 必須列出 MPPPenAutoTuning 全部 17 個 AnalysisFlow 實作及其分類（噪音/傾角/調校/數位/壓力/線性度/其他）
+- **FR-004**: Spec 必須列出 MPPPenAutoTuning 全部 16 個 AnalysisFlow 實作及其分類（噪音/傾角/調校/數位/壓力/線性度/其他）
 
 #### B. DataAnalysis 分派層
 
@@ -104,7 +104,7 @@
 
 ### Key Entities
 
-- **AnalysisFlow**: 分析流程的基類抽象，定義頻率掃描/資料分析/結果輸出的標準介面。FingerAutoTuning 有 7 個實作，MPPPenAutoTuning 有 17 個實作。
+- **AnalysisFlow**: 分析流程的基類抽象，定義頻率掃描/資料分析/結果輸出的標準介面。FingerAutoTuning 有 7 個實作，MPPPenAutoTuning 有 16 個實作。
 - **MainStep / MainTuningStep**: 流程步驟列舉，作為 DataAnalysis 分派至對應 AnalysisFlow 的識別鍵。
 - **ElanCommand**: ELAN 觸控 IC 的韌體命令集，以列舉 + 靜態映射表組織，區分 Get/Set 配對命令。
 - **ElanCommand_Gen8**: Gen8 世代 IC 的擴展命令結構，使用 `WriteCommandInfo` 複合資料結構取代簡單列舉。

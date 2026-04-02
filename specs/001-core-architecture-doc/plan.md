@@ -70,7 +70,7 @@ FingerAutoTuning/FingerAutoTuning/
 
 MPPPenAutoTuning/MPPPenAutoTuning/
 ├── AnalysisFlow/
-│   └── AnalysisFlow_Raw.cs      # 基類定義（17 個子類）
+│   └── AnalysisFlow_Raw.cs      # 基類定義（16 個子類）
 ├── ProcessFlow_MainFlow.cs      # partial class (7 個檔案)
 ├── ProcessFlow_SingleMode.cs
 ├── ProcessFlow_ClientMode.cs
@@ -126,7 +126,7 @@ MPPPenAutoTuning/MPPPenAutoTuning/
 - **三層文件結構**（research → contracts → quickstart）而非單一巨型文件：各文件有明確使用者（research 供驗證、contracts 供參考、quickstart 供操作）
 - **不逐一列舉命令值**：僅記錄分類結構與數量，精確值以程式碼為準（符合 spec Assumptions）
 - **兩模組獨立 contract**：FingerAutoTuning 與 MPPPenAutoTuning 架構差異足夠大（virtual vs convention-based），分開記錄
-- **MPPPen 17 個 AnalysisFlow 分類**：標註為「文件歸納分類」，附 SubTuningStep 對應作為事實依據
+- **MPPPen 16 個 AnalysisFlow 分類**：標註為「文件歸納分類」，附 DataAnalysis.cs 分派邏輯作為事實依據
 
 ## Complexity Tracking
 

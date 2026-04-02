@@ -35,66 +35,77 @@ public void ComputeAndOutputResult()    // 計算並輸出結果
 
 ---
 
-## 17 個子類分類對照表
+## 16 個子類分類對照表
 
-> 注：分類為文件歸納，程式碼中無此分類定義。SubTuningStep 對應為事實依據。
+> 注：分類為文件歸納，程式碼中無此分類定義。分派邏輯來源為 `Class/DataAnalysis.cs`。
 
-### 噪音類 (Noise) — 5 個
+### 噪音類 (Noise) — 3 個
 
-| # | 類別名稱 | MainTuningStep | SubTuningStep |
-|---|----------|----------------|---------------|
-| 1 | `AnalysisFlow_NoiseHover1stNO` | NO(1) | HOVER_1ST(1) |
-| 2 | `AnalysisFlow_NoiseHover2ndNO` | NO(1) | HOVER_2ND(2) |
-| 3 | `AnalysisFlow_NoiseContactNO` | NO(1) | CONTACT(3) |
-| 4 | `AnalysisFlow_NoiseTRxSHoverNO` | NO(1) | HOVERTRxS(4) |
-| 5 | `AnalysisFlow_NoiseTRxSContactNO` | NO(1) | CONTACTTRxS(5) |
+| # | 類別名稱 | 繼承自 | MainTuningStep | 分派條件 |
+|---|----------|--------|----------------|----------|
+| 1 | `AnalysisFlow_Noise` | `AnalysisFlow` | NO(1) | 預設（非 Gen8、非 TestMode） |
+| 2 | `AnalysisFlow_Noise_Gen8` | `AnalysisFlow_Noise` | NO(1) | `nICSolutionType == Gen8` |
+| 3 | `AnalysisFlow_Noise_TestMode` | `AnalysisFlow` | NO(1) | `m_nNoiseDataType == 1` |
 
 ### 傾角噪音類 (Tilt Noise) — 2 個
 
-| # | 類別名稱 | MainTuningStep | SubTuningStep |
-|---|----------|----------------|---------------|
-| 6 | `AnalysisFlow_TiltNoisePTHF` | TILTNO(2) | TILTNO_PTHF(6) |
-| 7 | `AnalysisFlow_TiltNoiseBHF` | TILTNO(2) | TILTNO_BHF(7) |
-
-### 傾角調校類 (Tilt Tuning) — 2 個
-
-| # | 類別名稱 | MainTuningStep | SubTuningStep |
-|---|----------|----------------|---------------|
-| 8 | `AnalysisFlow_TiltTuningPTHF` | TILTTUNING(7) | TILTTUNING_PTHF(8) |
-| 9 | `AnalysisFlow_TiltTuningBHF` | TILTTUNING(7) | TILTTUNING_BHF(9) |
+| # | 類別名稱 | 繼承自 | MainTuningStep | SubTuningStep |
+|---|----------|--------|----------------|---------------|
+| 4 | `AnalysisFlow_TiltNoise` | `AnalysisFlow` | TILTNO(2) | TILTNO_PTHF(6), TILTNO_BHF(7)（預設，非 Gen8） |
+| 5 | `AnalysisFlow_TiltNoise_Gen8` | `AnalysisFlow_TiltNoise` | TILTNO(2) | `nICSolutionType == Gen8` |
 
 ### 增益調校類 (Gain Tuning) — 2 個
 
-| # | 類別名稱 | MainTuningStep | SubTuningStep |
-|---|----------|----------------|---------------|
-| 10 | `AnalysisFlow_DigiGainTuning` | DIGIGAINTUNING(3) | DIGIGAIN(17) |
-| 11 | `AnalysisFlow_TPGainTuning` | TPGAINTUNING(4) | TP_GAIN(18) |
+| # | 類別名稱 | 繼承自 | MainTuningStep | SubTuningStep |
+|---|----------|--------|----------------|---------------|
+| 6 | `AnalysisFlow_DigiGainTuning` | `AnalysisFlow` | DIGIGAINTUNING(3) | DIGIGAIN(17) |
+| 7 | `AnalysisFlow_TPGainTuning` | `AnalysisFlow` | TPGAINTUNING(4) | TP_GAIN(18) |
 
-### 峰值檢查類 (Peak Check) — 3 個
+### 峰值檢查類 (Peak Check) — 1 個
 
-| # | 類別名稱 | MainTuningStep | SubTuningStep |
-|---|----------|----------------|---------------|
-| 12 | `AnalysisFlow_PeakCheckHover1st` | PEAKCHECKTUNING(5) | PCHOVER_1ST(14) |
-| 13 | `AnalysisFlow_PeakCheckHover2nd` | PEAKCHECKTUNING(5) | PCHOVER_2ND(15) |
-| 14 | `AnalysisFlow_PeakCheckContact` | PEAKCHECKTUNING(5) | PCCONTACT(16) |
+| # | 類別名稱 | 繼承自 | MainTuningStep | SubTuningStep |
+|---|----------|--------|----------------|---------------|
+| 8 | `AnalysisFlow_PeakCheck` | `AnalysisFlow` | PEAKCHECKTUNING(5) | PCHOVER_1ST(14), PCHOVER_2ND(15), PCCONTACT(16) |
 
-### 數位調校類 (Digital Tuning) — 1 個
+### 數位調校類 (Digital Tuning) — 2 個
 
-| # | 類別名稱 | MainTuningStep | SubTuningStep |
-|---|----------|----------------|---------------|
-| 15 | `AnalysisFlow_DigitalTuning` | DIGITALTUNING(6) | — (依子步驟變化) |
+| # | 類別名稱 | 繼承自 | MainTuningStep | SubTuningStep |
+|---|----------|--------|----------------|---------------|
+| 9 | `AnalysisFlow_DTNormal` | `AnalysisFlow` | DIGITALTUNING(6) | HOVER_1ST(1), HOVER_2ND(2), CONTACT(3) |
+| 10 | `AnalysisFlow_DTTRxS` | `AnalysisFlow` | DIGITALTUNING(6) | HOVERTRxS(4), CONTACTTRxS(5) |
 
-### 壓力類 (Pressure) — 1 個
+### 傾角調校類 (Tilt Tuning) — 1 個
 
-| # | 類別名稱 | MainTuningStep | SubTuningStep |
-|---|----------|----------------|---------------|
-| 16 | `AnalysisFlow_PressureTuning` | PRESSURETUNING(8) | PRESSURETABLE(12) |
+| # | 類別名稱 | 繼承自 | MainTuningStep | SubTuningStep |
+|---|----------|--------|----------------|---------------|
+| 11 | `AnalysisFlow_TiltTuning` | `AnalysisFlow` | TILTTUNING(7) | TILTTUNING_PTHF(8), TILTTUNING_BHF(9) |
+
+### 壓力類 (Pressure) — 3 個
+
+| # | 類別名稱 | 繼承自 | MainTuningStep | SubTuningStep |
+|---|----------|--------|----------------|---------------|
+| 12 | `AnalysisFlow_PressureSetting` | `AnalysisFlow` | PRESSURETUNING(8) | PRESSURESETTING |
+| 13 | `AnalysisFlow_PressureProtect` | `AnalysisFlow` | PRESSURETUNING(8) | PRESSUREPROTECT |
+| 14 | `AnalysisFlow_PressureTable` | `AnalysisFlow` | PRESSURETUNING(8) | PRESSURETABLE(12) |
 
 ### 線性度類 (Linearity) — 1 個
 
-| # | 類別名稱 | MainTuningStep | SubTuningStep |
-|---|----------|----------------|---------------|
-| 17 | `AnalysisFlow_LinearityTuning` | LINEARITYTUNING(9) | LINEARITYTABLE(13) |
+| # | 類別名稱 | 繼承自 | MainTuningStep | SubTuningStep |
+|---|----------|--------|----------------|---------------|
+| 15 | `AnalysisFlow_LinearityTable` | `AnalysisFlow` | LINEARITYTUNING(9) | LINEARITYTABLE(13) |
+
+### 後備類 (Fallback) — 1 個
+
+| # | 類別名稱 | 繼承自 | MainTuningStep | SubTuningStep |
+|---|----------|--------|----------------|---------------|
+| 16 | `AnalysisFlow_Else` | `AnalysisFlow` | (其他) | fallback（未被上述條件匹配） |
+
+### 分派策略摘要
+
+- **條件式分派 (IC Solution Type)**：NO / TILTNO 步驟根據 Gen8/非 Gen8 選擇不同子類
+- **Sub-step 分派**：DIGITALTUNING / PRESSURETUNING 根據 SubTuningStep 值進一步分派
+- **特殊邏輯**：NO 步驟額外檢查 `m_nNoiseDataType` 判斷 TestMode
+- **繼承鏈**：13 個直接繼承 `AnalysisFlow`，3 個間接繼承（`Noise_Gen8` ← `Noise`、`TiltNoise_Gen8` ← `TiltNoise`）
 
 ---
 
@@ -108,7 +119,7 @@ public void ComputeAndOutputResult()    // 計算並輸出結果
 | 子類方法綁定 | 虛擬方法覆寫（compile-time polymorphism） | 慣例方法（explicit downcast in caller） |
 | 分派維度 | 1 維（MainStep） | 3 維（MainTuningStep + SubTuningStep + nICSolutionType） |
 | 協調層 | AppCore → DataAnalysis | ProcessFlow → DataAnalysis |
-| 子類數量 | 6 | 17 |
+| 子類數量 | 6 | 16 |
 
 ### 執行順序
 
@@ -149,5 +160,5 @@ public void ComputeAndOutputResult()    // 計算並輸出結果
 | 操作 | 必須修改的檔案 |
 |------|---------------|
 | 新增 AnalysisFlow | `AnalysisFlow/AnalysisFlow_<Name>.cs` (新建)、`DataAnalysis.cs`、`MPPPenAutoTuning.csproj` |
-| 修改基類 | `AnalysisFlow/AnalysisFlow_Raw.cs`、所有 17 個子類 |
+| 修改基類 | `AnalysisFlow/AnalysisFlow_Raw.cs`、所有 16 個子類 |
 | 新增 SubTuningStep | `ParameterProperties.cs`、`DataAnalysis.cs`、`StringConvert.cs` 映射表 |

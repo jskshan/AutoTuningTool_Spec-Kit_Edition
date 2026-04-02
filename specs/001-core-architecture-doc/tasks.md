@@ -37,8 +37,8 @@
 
 **Purpose**: 建立 feature 目錄結構與實作計畫
 
-- [ ] T001 建立 feature 目錄 `specs/001-core-architecture-doc/` 與子目錄 `contracts/`
-- [ ] T002 建立 `specs/001-core-architecture-doc/plan.md` 實作計畫，定義 Phase A/B 交付步驟與驗證標準
+- [X] T001 建立 feature 目錄 `specs/001-core-architecture-doc/` 與子目錄 `contracts/`
+- [X] T002 建立 `specs/001-core-architecture-doc/plan.md` 實作計畫，定義 Phase A/B 交付步驟與驗證標準
 
 ---
 
@@ -48,15 +48,15 @@
 
 **⚠️ CRITICAL**: 所有 User Story 的契約文件均依賴此階段產出的事實資料
 
-- [ ] T003 建立 `specs/001-core-architecture-doc/research.md` — 從 FingerAutoTuning 提取 AnalysisFlow 基類定義、虛擬方法簽名、受保護欄位、巢狀類別 (FileCheckInfo/RawADCS_FileCheckInfo/Self_FileCheckInfo)，來源檔案：`FingerAutoTuning/FingerAutoTuning/AnalysisFlow_Raw.cs`
-- [ ] T004 將 DataAnalysis 分派邏輯事實補入 `specs/001-core-architecture-doc/research.md` — 提取 ExecuteMainWorkFlow 簽名、MainStep 列舉、兩段式 if-else 分派模式，來源檔案：`FingerAutoTuning/FingerAutoTuning/DataAnalysis.cs`、`FingerAutoTuning/FingerAutoTuning/frmMain.cs`
-- [ ] T005 將 AppCore 協調層事實補入 `specs/001-core-architecture-doc/research.md` — 提取內部物件清單、調用關係鏈，來源檔案：`FingerAutoTuning/FingerAutoTuning/AppCore.cs`
-- [ ] T006 將 DataSave 儲存層事實補入 `specs/001-core-architecture-doc/research.md` — 提取 CreateRecordData 簽名、Self/Mutual/RawADCS 檔名模板，來源檔案：`FingerAutoTuning/FingerAutoTuning/DataSave.cs`
-- [ ] T007 [P] 將 ElanCommand 命令集事實補入 `specs/001-core-architecture-doc/research.md` — 提取 ElanCommandType (85值)、ICValueTargetType (29值)、映射表、轉換方法，來源檔案：`FingerAutoTuning/FingerAutoTuning/Class/ElanCommand.cs`
-- [ ] T008 [P] 將 ElanCommand_Gen8 事實補入 `specs/001-core-architecture-doc/research.md` — 提取 ParameterType (29值)、SendCommandInfo/WriteCommandInfo 結構、DataType/ParameterClass 常數，來源檔案：`FingerAutoTuning/FingerAutoTuning/Class/ElanCommand_Gen8.cs`
-- [ ] T009 [P] 將 ElanTouch 通訊層事實補入 `specs/001-core-architecture-doc/research.md` — 提取介面常數 (HID=1/I2C=8/SPI=9)、TraceInfo 結構、TraceMode 列舉、callback 委派，來源檔案：`FingerAutoTuning/FingerAutoTuning/Class/ElanTouch.cs`
-- [ ] T010 [P] 將 MPPPenAutoTuning 事實補入 `specs/001-core-architecture-doc/research.md` — 提取 MainTuningStep (11值)、SubTuningStep (20值)、AnalysisFlow 基類 (1 virtual 方法)、17 個子類分類表、ProcessFlow 7 檔案，來源檔案：`MPPPenAutoTuning/MPPPenAutoTuning/ParameterProperties.cs`、`MPPPenAutoTuning/MPPPenAutoTuning/AnalysisFlow/AnalysisFlow_Raw.cs`、`MPPPenAutoTuning/MPPPenAutoTuning/ProcessFlow_*.cs`
-- [ ] T011 建立 `specs/001-core-architecture-doc/data-model.md` — 記錄跨層共用資料結構：FlowStep、MainStep/MainTuningStep/SubTuningStep、FileCheckInfo 家族、SaveDataInfo、TraceInfo、ElanCommand 結構、TraceMode、跨層資料流圖
+- [X] T003 建立 `specs/001-core-architecture-doc/research.md` — 從 FingerAutoTuning 提取 AnalysisFlow 基類定義、虛擬方法簽名、受保護欄位、巢狀類別 (FileCheckInfo/RawADCS_FileCheckInfo/Self_FileCheckInfo)，來源檔案：`FingerAutoTuning/FingerAutoTuning/AnalysisFlow_Raw.cs`
+- [X] T004 將 DataAnalysis 分派邏輯事實補入 `specs/001-core-architecture-doc/research.md` — 提取 ExecuteMainWorkFlow 簽名、MainStep 列舉、兩段式 if-else 分派模式，來源檔案：`FingerAutoTuning/FingerAutoTuning/DataAnalysis.cs`、`FingerAutoTuning/FingerAutoTuning/frmMain.cs`
+- [X] T005 將 AppCore 協調層事實補入 `specs/001-core-architecture-doc/research.md` — 提取內部物件清單、調用關係鏈，來源檔案：`FingerAutoTuning/FingerAutoTuning/AppCore.cs`
+- [X] T006 將 DataSave 儲存層事實補入 `specs/001-core-architecture-doc/research.md` — 提取 CreateRecordData 簽名、Self/Mutual/RawADCS 檔名模板，來源檔案：`FingerAutoTuning/FingerAutoTuning/DataSave.cs`
+- [X] T007 [P] 將 ElanCommand 命令集事實補入 `specs/001-core-architecture-doc/research.md` — 提取 ElanCommandType (85值)、ICValueTargetType (29值)、映射表、轉換方法，來源檔案：`FingerAutoTuning/FingerAutoTuning/Class/ElanCommand.cs`
+- [X] T008 [P] 將 ElanCommand_Gen8 事實補入 `specs/001-core-architecture-doc/research.md` — 提取 ParameterType (29值)、SendCommandInfo/WriteCommandInfo 結構、DataType/ParameterClass 常數，來源檔案：`FingerAutoTuning/FingerAutoTuning/Class/ElanCommand_Gen8.cs`
+- [X] T009 [P] 將 ElanTouch 通訊層事實補入 `specs/001-core-architecture-doc/research.md` — 提取介面常數 (HID=1/I2C=8/SPI=9)、TraceInfo 結構、TraceMode 列舉、callback 委派，來源檔案：`FingerAutoTuning/FingerAutoTuning/Class/ElanTouch.cs`
+- [X] T010 [P] 將 MPPPenAutoTuning 事實補入 `specs/001-core-architecture-doc/research.md` — 提取 MainTuningStep (11值)、SubTuningStep (20值)、AnalysisFlow 基類 (1 virtual 方法)、16 個子類分類表、ProcessFlow 7 檔案，來源檔案：`MPPPenAutoTuning/MPPPenAutoTuning/ParameterProperties.cs`、`MPPPenAutoTuning/MPPPenAutoTuning/AnalysisFlow/AnalysisFlow_Raw.cs`、`MPPPenAutoTuning/MPPPenAutoTuning/ProcessFlow_*.cs`
+- [X] T011 建立 `specs/001-core-architecture-doc/data-model.md` — 記錄跨層共用資料結構：FlowStep、MainStep/MainTuningStep/SubTuningStep、FileCheckInfo 家族、SaveDataInfo、TraceInfo、ElanCommand 結構、TraceMode、跨層資料流圖
 
 **Checkpoint**: research.md + data-model.md 完成 — 事實基礎就緒，可開始各 User Story 的契約文件
 
@@ -72,9 +72,9 @@
 
 ### Implementation for User Story 1
 
-- [ ] T012 [P] [US1] 建立 `specs/001-core-architecture-doc/contracts/finger-analysisflow.md` — FingerAutoTuning AnalysisFlow 介面契約：基類虛擬方法簽名 (FR-001)、6 個分派目標對照表 (FR-002)、建構子模式、行為契約、擴展指南 checklist、連動檔案清單
-- [ ] T013 [P] [US1] 建立 `specs/001-core-architecture-doc/contracts/mpp-analysisflow.md` — MPPPenAutoTuning AnalysisFlow 介面契約：唯一 virtual 方法 (FR-003)、convention-based 方法清單、17 個子類分類表 (FR-004)、與 FingerAutoTuning 差異對比、擴展指南 checklist
-- [ ] T014 [US1] 建立 `specs/001-core-architecture-doc/contracts/data-analysis-dispatch.md` — 雙模組分派邏輯契約：FingerAutoTuning ExecuteMainWorkFlow 簽名與參數 (FR-005)、MainStep 列舉與兩段式 if-else (FR-006)、MPPPenAutoTuning 三維分派 (FR-007)、ProcessFlow 7 檔案表 (FR-008)、AppCore 協調層 (FR-017)、雙模組架構比較表
+- [X] T012 [P] [US1] 建立 `specs/001-core-architecture-doc/contracts/finger-analysisflow.md` — FingerAutoTuning AnalysisFlow 介面契約：基類虛擬方法簽名 (FR-001)、6 個分派目標對照表 (FR-002)、建構子模式、行為契約、擴展指南 checklist、連動檔案清單
+- [X] T013 [P] [US1] 建立 `specs/001-core-architecture-doc/contracts/mpp-analysisflow.md` — MPPPenAutoTuning AnalysisFlow 介面契約：唯一 virtual 方法 (FR-003)、convention-based 方法清單、16 個子類分類表 (FR-004)、與 FingerAutoTuning 差異對比、擴展指南 checklist
+- [X] T014 [US1] 建立 `specs/001-core-architecture-doc/contracts/data-analysis-dispatch.md` — 雙模組分派邏輯契約：FingerAutoTuning ExecuteMainWorkFlow 簽名與參數 (FR-005)、MainStep 列舉與兩段式 if-else (FR-006)、MPPPenAutoTuning 三維分派 (FR-007)、ProcessFlow 7 檔案表 (FR-008)、AppCore 協調層 (FR-017)、雙模組架構比較表
 
 **Checkpoint**: US1 契約完成 — AI Agent 可查詢完整的 AnalysisFlow 新增流程
 
@@ -90,9 +90,9 @@
 
 ### Implementation for User Story 2
 
-- [ ] T015 [P] [US2] 建立 `specs/001-core-architecture-doc/contracts/elan-command.md` — ElanCommand 命令結構契約：ElanCommandType 分類統計 (FR-009)、ICValueTargetType 映射規則與轉換方法 (FR-010)、ElanCommand_Gen8 擴展結構 (FR-011)、雙模組命令數量差異、擴展指南 checklist
-- [ ] T016 [P] [US2] 建立 `specs/001-core-architecture-doc/contracts/communication-layer.md` — 通訊傳輸層契約：ElanTouch 介面常數與 TP_INTERFACE_TYPE (FR-012)、TraceInfo 結構與 TraceMode 位元旗標、callback 機制、IHardware/IRS232Device 介面 (FR-015, FR-016)、nICSolutionType 分支邏輯、連動檔案清單
-- [ ] T016b [P] [US2] 擴充 `specs/001-core-architecture-doc/data-model.md` §4 — DataSave 檔名生成規則：Mutual 模式範本、Self 模式範本（含 NCP/NCN）、RawADCS 模式範本 (FR-013, FR-014)
+- [X] T015 [P] [US2] 建立 `specs/001-core-architecture-doc/contracts/elan-command.md` — ElanCommand 命令結構契約：ElanCommandType 分類統計 (FR-009)、ICValueTargetType 映射規則與轉換方法 (FR-010)、ElanCommand_Gen8 擴展結構 (FR-011)、雙模組命令數量差異、擴展指南 checklist
+- [X] T016 [P] [US2] 建立 `specs/001-core-architecture-doc/contracts/communication-layer.md` — 通訊傳輸層契約：ElanTouch 介面常數與 TP_INTERFACE_TYPE (FR-012)、TraceInfo 結構與 TraceMode 位元旗標、callback 機制、IHardware/IRS232Device 介面 (FR-015, FR-016)、nICSolutionType 分支邏輯、連動檔案清單
+- [X] T016b [P] [US2] 擴充 `specs/001-core-architecture-doc/data-model.md` §4 — DataSave 檔名生成規則：Mutual 模式範本、Self 模式範本（含 NCP/NCN）、RawADCS 模式範本 (FR-013, FR-014)
 
 **Checkpoint**: US2 契約完成 — 開發者可查詢完整的通訊層架構
 
@@ -108,7 +108,7 @@
 
 ### Implementation for User Story 3
 
-- [ ] T017 [US3] 建立 `specs/001-core-architecture-doc/quickstart.md` — 開發速查手冊：新增 FingerAutoTuning AnalysisFlow 步驟 (含程式碼範本)、新增 MPPPenAutoTuning AnalysisFlow 步驟、新增 ElanCommand 步驟、通訊層修改 checklist、DataSave 檔名規則參考、連動更新總覽矩陣、常見問題 (雙模組差異比較表)
+- [X] T017 [US3] 建立 `specs/001-core-architecture-doc/quickstart.md` — 開發速查手冊：新增 FingerAutoTuning AnalysisFlow 步驟 (含程式碼範本)、新增 MPPPenAutoTuning AnalysisFlow 步驟、新增 ElanCommand 步驟、通訊層修改 checklist、DataSave 檔名規則參考、連動更新總覽矩陣、常見問題 (雙模組差異比較表)
 
 **Checkpoint**: 全部文件產出完成 — 3 個 User Story 均可獨立驗證
 
@@ -118,10 +118,10 @@
 
 **Purpose**: 連動更新與一致性驗證
 
-- [ ] T018 更新 `specs/001-core-architecture-doc/spec.md` — 將 Status 從 Draft 改為 Approved
-- [ ] T019 更新 `README.md` — 在專案結構中加入 `specs/001-core-architecture-doc/` 子目錄描述（含 spec.md、plan.md、research.md、data-model.md、quickstart.md、contracts/）
-- [ ] T020 執行符號一致性驗證 (SC-003) — 使用 grep 比對 contracts/ 中引用的類別名稱、方法簽名、列舉值是否 100% 存在於程式碼中
-- [ ] T021 執行快速參考測試 (SC-004) — 驗證 AI Agent 閱讀 quickstart.md 後能列出 ≥4 個「新增 AnalysisFlow 需修改的檔案路徑」
+- [X] T018 更新 `specs/001-core-architecture-doc/spec.md` — 將 Status 從 Draft 改為 Approved
+- [X] T019 更新 `README.md` — 在專案結構中加入 `specs/001-core-architecture-doc/` 子目錄描述（含 spec.md、plan.md、research.md、data-model.md、quickstart.md、contracts/）
+- [X] T020 執行符號一致性驗證 (SC-003) — 使用 grep 比對 contracts/ 中引用的類別名稱、方法簽名、列舉值是否 100% 存在於程式碼中
+- [X] T021 執行快速參考測試 (SC-004) — 驗證 AI Agent 閱讀 quickstart.md 後能列出 ≥4 個「新增 AnalysisFlow 需修改的檔案路徑」
 
 ---
 
