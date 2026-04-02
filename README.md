@@ -15,6 +15,14 @@ AutoTuningTool/
 ├── restore-packages.ps1               # Windows 一鍵還原 NuGet 套件腳本
 ├── AutoTuningTool Changelog.docx      # 專案變更日誌
 │
+├── .specify/                          # Spec-Kit SDD 核心目錄
+│   ├── memory/constitution.md         # 專案治理原則（最高指引）
+│   ├── templates/                     # Spec / Plan / Tasks 模板
+│   ├── scripts/powershell/            # SDD 自動化腳本
+│   └── specs/                         # Feature 規格（按功能分支）
+│
+├── .github/prompts/                   # Copilot Slash Commands (SDD)
+│
 ├── AutoTuning_NewUI/                  # 主程式入口 (Windows Forms WinExe)
 │   ├── frmMain.cs                     # 主視窗（含 Finger / MPP Pen 切換）
 │   ├── frmMain.Designer.cs            # 主視窗 UI 佈局

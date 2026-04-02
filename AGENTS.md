@@ -163,6 +163,62 @@ feat: 新增 Raw ADCS 掃描分析流程
 
 ---
 
+## Spec-Driven Development (SDD) 工作流
+
+本專案已導入 [GitHub Spec-Kit](https://github.com/github/spec-kit)，採用 Specification-Driven Development 方法論進行開發。
+
+### Spec-Kit 目錄結構
+
+```
+.specify/                      # Spec-Kit 核心目錄
+├── memory/
+│   └── constitution.md        # 專案治理原則（最高指引）
+├── templates/                 # Spec/Plan/Tasks 模板
+├── scripts/powershell/        # 自動化腳本 (PowerShell)
+├── integrations/              # Agent 整合設定
+└── specs/                     # Feature 規格目錄（按功能分支）
+    └── <feature-name>/
+        ├── spec.md            # 功能規格
+        ├── plan.md            # 技術實作計畫
+        └── tasks.md           # 可執行任務清單
+
+.github/prompts/               # Copilot Slash Commands
+├── speckit.constitution.prompt.md
+├── speckit.specify.prompt.md
+├── speckit.clarify.prompt.md
+├── speckit.plan.prompt.md
+├── speckit.analyze.prompt.md
+├── speckit.tasks.prompt.md
+└── speckit.implement.prompt.md
+```
+
+### SDD 開發流程
+
+新功能開發遵循以下 SDD 標準流程：
+
+1. **`/speckit.specify`** — 定義功能需求（聚焦 what & why）
+2. **`/speckit.clarify`** — 釐清模糊需求（建議在 plan 前執行）
+3. **`/speckit.plan`** — 制定技術實作計畫（指定 C# / .NET Framework 4.8 / WinForms / x86）
+4. **`/speckit.analyze`** — 交叉一致性分析
+5. **`/speckit.tasks`** — 產生可執行任務清單
+6. **`/speckit.implement`** — 執行實作
+
+### 規範文件層級
+
+| 層級 | 文件 | 說明 |
+|------|------|------|
+| 最高 | `.specify/memory/constitution.md` | 專案治理原則 |
+| 操作 | `AGENTS.md` | AI Agent 詳細操作指南 |
+| 功能 | `.specify/specs/<feature>/spec.md` | 個別功能規格 |
+
+### 環境需求
+
+- **Python 3.11+** + **uv** — Spec-Kit CLI 的執行環境
+- 安裝 Spec-Kit CLI：`uv tool install specify-cli --from git+https://github.com/github/spec-kit.git@v0.4.4`
+- 驗證安裝：`specify check`
+
+---
+
 ## 建置與還原
 
 ### NuGet 套件還原
