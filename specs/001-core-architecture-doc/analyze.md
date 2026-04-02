@@ -16,7 +16,7 @@
 | U1 | Underspecification | MEDIUM | data-model.md §4, spec.md Key Entities | `SaveDataInfo` 被列為 Key Entity，但 data-model.md 僅展示 `CreateRecordData()` 方法簽名，未列出 `SaveDataInfo` 的欄位定義 | 在 data-model.md §4 補充 SaveDataInfo 欄位清單，或加註「欄位細節以程式碼為準，不在文件範圍」 |
 | F4 | Inconsistency | MEDIUM | plan.md vs tasks.md | plan.md 使用「Phase A (Steps 1-4) + Phase B (Step 5)」結構，tasks.md 重組為「Phase 1-6」user-story-aligned 結構，兩者無對照關係說明 | 在 tasks.md 開頭加入 Plan↔Tasks 階段對照表（Phase A = Tasks Phase 1+2+3+4+5, Phase B = Tasks Phase 6） |
 | A1 | Ambiguity | LOW | spec.md Success Criteria | SC 編號從 SC-001 跳至 SC-003（缺 SC-002），暗示曾有合併或刪除但未留下紀錄 | 加註「SC-002 已合併至 SC-001」或重新連續編號 |
-| D1 | Terminology | LOW | constitution.md §II, spec.md FR-004 | Constitution 寫「16+ 分析流程」，spec.md 精確記錄為 17 個 | 更新 constitution 為 17（可選，「16+」技術上相容） |
+| D1 | Terminology | LOW → ✅ RESOLVED | constitution.md §II, spec.md FR-004 | Constitution 寫「16+ 分析流程」，經 SC-003 驗證後 spec.md 已修正為 16 個，與「16+」精確匹配 | 無需修正 — 「16+」與實際 16 個子類完全相容 |
 | F5 | Inconsistency | LOW | plan.md Step 2, tasks.md Phase 3+4 | plan.md 將所有 contracts/ 視為單一「Step 2」；tasks.md 拆分為 Phase 3 (US1) + Phase 4 (US2) | 可接受的 user-story-aligned 細化，無需修正 |
 
 ---
@@ -92,7 +92,7 @@
 | Critical Issues Count | **0** |
 | HIGH Issues | **2** |
 | MEDIUM Issues | **4** |
-| LOW Issues | **3** |
+| LOW Issues | **2** (A1, F5；D1 已解決) |
 
 ---
 
@@ -112,7 +112,7 @@
 ### 未修正項目（LOW，非阻塞）
 
 7. **A1** — SC 編號跳號（SC-002 缺失），可加註或重新排序
-8. **D1** — Constitution 寫「16+ 分析流程」，spec 精確記錄 17 個（技術上相容）
+8. **D1** — ✅ 已自動解決：SC-003 驗證期間發現 MPP AnalysisFlow 實際為 16 個子類，spec.md 已修正為 16，與 Constitution「16+」精確匹配
 9. **F5** — plan.md vs tasks.md 階段粒度差異（已透過 F4 對照表緩解）
 
 ---
