@@ -2,7 +2,7 @@
 
 **Feature Branch**: `001-core-architecture-doc`  
 **Created**: 2026-04-02  
-**Status**: Draft  
+**Status**: Approved  
 **Input**: User description: "為 AutoTuningTool 核心模組（AnalysisFlow、DataAnalysis、通訊層）建立正式架構規格，作為後續 SDD 開發的基礎上下文。"
 
 ## User Scenarios & Testing *(mandatory)*

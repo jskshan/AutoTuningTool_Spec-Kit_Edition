@@ -20,6 +20,14 @@ AutoTuningTool/
 │   ├── templates/                     # Spec / Plan / Tasks 模板
 │   ├── scripts/powershell/            # SDD 自動化腳本
 │   └── specs/                         # Feature 規格（按功能分支）
+│       └── 001-core-architecture-doc/ # 核心架構文件化
+│           ├── spec.md                # 功能規格
+│           ├── plan.md                # 技術實作計畫
+│           ├── research.md            # 原始碼事實收集
+│           ├── data-model.md          # 核心資料結構參考
+│           ├── quickstart.md          # 開發速查手冊
+│           └── contracts/             # 介面契約文件
+
 │
 ├── .github/prompts/                   # Copilot Slash Commands (SDD)
 │
