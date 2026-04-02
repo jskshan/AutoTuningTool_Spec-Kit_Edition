@@ -69,7 +69,7 @@
 
 #### A. AnalysisFlow 分析流程層
 
-- **FR-001**: Spec 必須記錄 FingerAutoTuning 的 AnalysisFlow 基類介面，包含所有虛擬方法簽名：`InitializeParameter()`、`InitializeSourceDataList()`、`LoadAnalysisParameter()`、`MainFlow(ref string sErrorMessage) → bool`、`GetDataCount() → bool`
+- **FR-001**: Spec 必須記錄 FingerAutoTuning 的 AnalysisFlow 基類介面，包含所有虛擬方法簽名：`InitializeParameter()`、`InitializeSourceDataList()`、`LoadAnalysisParameter()`、`MainFlow(ref string sErrorMessage) → bool`；以及非虛方法 `GetDataCount() → bool`
 - **FR-002**: Spec 必須列出 FingerAutoTuning 的 AnalysisFlow 基類（`AnalysisFlow_Raw.cs`）及 6 個分派目標實作，對應 MainStep 列舉值：FRPH1(FrequencyRank_Phase1=1)、FRPH2(FrequencyRank_Phase2=2)、ACFR(AC_FrequencyRank=3)、RawADCS(Raw_ADC_Sweep=4)、SelfFS(Self_FrequencySweep=5)、SelfPNS(Self_NCPNCNSweep=6)。MainStep.Else=7 無對應分派實作
 - **FR-003**: Spec 必須記錄 MPPPenAutoTuning 的 AnalysisFlow 基類介面：唯一的 virtual 方法為 `LoadAnalysisParameter()`；`InitializeParameter(FlowStep)` 為 protected 非虛方法。子類慣例方法（convention-based, non-virtual）包括 `SetFileDirectory()`、`CheckDirectoryIsValid()`、`GetData()`、`ComputeAndOutputResult()`
 - **FR-004**: Spec 必須列出 MPPPenAutoTuning 全部 17 個 AnalysisFlow 實作及其分類（噪音/傾角/調校/數位/壓力/線性度/其他）

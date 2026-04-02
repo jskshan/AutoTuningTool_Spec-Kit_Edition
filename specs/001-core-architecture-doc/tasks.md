@@ -20,6 +20,17 @@
 - **MPPPenAutoTuning source (read-only)**: `MPPPenAutoTuning/MPPPenAutoTuning/`
 - 本 feature 僅產出文件，不修改任何已有程式碼
 
+## Plan ↔ Tasks 階段對照
+
+| plan.md | tasks.md | 說明 |
+|---------|----------|------|
+| Phase A Step 1 (research.md) | Phase 2: T003-T010 | 原始碼事實收集 |
+| Phase A Step 2 (contracts/) | Phase 3: T012-T014 + Phase 4: T015-T016b | 介面契約（依 User Story 拆分） |
+| Phase A Step 3 (data-model.md) | Phase 2: T011 | 資料結構文件 |
+| Phase A Step 4 (quickstart.md) | Phase 5: T017 | 快速參考指南 |
+| Phase B Step 5 (status + README) | Phase 6: T018-T021 | 連動更新與驗證 |
+| — | Phase 1: T001-T002 | Setup（plan.md 未列為獨立步驟） |
+
 ---
 
 ## Phase 1: Setup (Shared Infrastructure)
@@ -75,12 +86,13 @@
 
 **Independent Test**: 開發者閱讀後能回答「ElanCommand 分為哪幾類」「Gen8 使用什麼資料結構」「HID/I2C/SPI 介面常數」
 
-**覆蓋 FR**: FR-009, FR-010, FR-011, FR-012
+**覆蓋 FR**: FR-009, FR-010, FR-011, FR-012, FR-013, FR-014, FR-015, FR-016
 
 ### Implementation for User Story 2
 
 - [ ] T015 [P] [US2] 建立 `specs/001-core-architecture-doc/contracts/elan-command.md` — ElanCommand 命令結構契約：ElanCommandType 分類統計 (FR-009)、ICValueTargetType 映射規則與轉換方法 (FR-010)、ElanCommand_Gen8 擴展結構 (FR-011)、雙模組命令數量差異、擴展指南 checklist
 - [ ] T016 [P] [US2] 建立 `specs/001-core-architecture-doc/contracts/communication-layer.md` — 通訊傳輸層契約：ElanTouch 介面常數與 TP_INTERFACE_TYPE (FR-012)、TraceInfo 結構與 TraceMode 位元旗標、callback 機制、IHardware/IRS232Device 介面 (FR-015, FR-016)、nICSolutionType 分支邏輯、連動檔案清單
+- [ ] T016b [P] [US2] 擴充 `specs/001-core-architecture-doc/data-model.md` §4 — DataSave 檔名生成規則：Mutual 模式範本、Self 模式範本（含 NCP/NCN）、RawADCS 模式範本 (FR-013, FR-014)
 
 **Checkpoint**: US2 契約完成 — 開發者可查詢完整的通訊層架構
 
@@ -92,11 +104,11 @@
 
 **Independent Test**: AI Agent 閱讀後不會將 FingerAutoTuning 的 AppCore 模式套用至 MPPPenAutoTuning，且能列出 ≥4 個「新增 AnalysisFlow 需修改的檔案」(SC-004)
 
-**覆蓋 FR**: FR-013, FR-014, FR-015, FR-016（含跨 US1/US2 整合）
+**覆蓋 FR**: 跨 US1/US2 整合（quickstart.md 為綜合速查手冊，不承接新 FR）
 
 ### Implementation for User Story 3
 
-- [ ] T017 [US3] 建立 `specs/001-core-architecture-doc/quickstart.md` — 開發速查手冊：新增 FingerAutoTuning AnalysisFlow 步驟 (含程式碼範本)、新增 MPPPenAutoTuning AnalysisFlow 步驟、新增 ElanCommand 步驟、通訊層修改 checklist、DataSave 檔名規則 (FR-013, FR-014)、連動更新總覽矩陣、常見問題 (雙模組差異比較表)
+- [ ] T017 [US3] 建立 `specs/001-core-architecture-doc/quickstart.md` — 開發速查手冊：新增 FingerAutoTuning AnalysisFlow 步驟 (含程式碼範本)、新增 MPPPenAutoTuning AnalysisFlow 步驟、新增 ElanCommand 步驟、通訊層修改 checklist、DataSave 檔名規則參考、連動更新總覽矩陣、常見問題 (雙模組差異比較表)
 
 **Checkpoint**: 全部文件產出完成 — 3 個 User Story 均可獨立驗證
 

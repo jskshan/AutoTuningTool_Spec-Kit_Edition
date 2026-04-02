@@ -151,10 +151,51 @@ public class Self_FileCheckInfo
 
 ## 4. SaveDataInfo — 儲存參數容器
 
+**檔案**: `FingerAutoTuning/FingerAutoTuning/DataSave.cs` L997-1075
+
+### 4.1 欄位定義
+
 ```csharp
-// DataSave.cs 中使用的傳入參數型別
+public class SaveDataInfo
+{
+    // 共用
+    public string m_sLogDirectoryPath;
+    public int    m_nListIndex;
+    public uint   m_nFWVersion;
+    public int    m_nFrameNumber;
+
+    // Mutual 模式
+    public int m_nPH1, m_nPH2, m_nPH3, m_nDFT_NUM;
+    public int m_nTXTraceNumber, m_nRXTraceNumber;
+    public int m_nReadPH1, m_nReadPH2, m_nReadPH3, m_nReadDFT_NUM;
+
+    // RawADCS 模式
+    public bool m_bRawADCSweep;
+    public int  m_nFIRCOEF_SEL, m_nFIRTB, m_nFIR_TAP_NUM;
+    public int  m_nSELGM, m_nIQ_BSH_0, m_nSELC, m_nVSEL, m_nLG;
+    public int  m_nReadFIRCOEF_SEL, m_nReadFIRTB, m_nReadFIR_TAP_NUM;
+    public int  m_nReadSELGM, m_nReadSELC, m_nReadVSEL, m_nReadLG;
+    public int  m_nReadProjectOption, m_nReadFWIPOption;
+
+    // Self 模式
+    public string m_sSelfTraceType, m_sSelfTracePart;
+    public int  m_n_SELF_PH1, m_n_SELF_PH2E_LAT, m_n_SELF_PH2E_LMT;
+    public int  m_n_SELF_PH2_LAT, m_n_SELF_PH2;
+    public int  m_nSelf_DFT_NUM, m_nSelf_Gain, m_nSelf_CAG, m_nSelf_IQ_BSH;
+    public int  m_nRead_SELF_PH1, m_nRead_SELF_PH2E_LAT, m_nRead_SELF_PH2E_LMT;
+    public int  m_nRead_SELF_PH2_LAT, m_nRead_SELF_PH2;
+    public int  m_nReadSelf_DFT_NUM, m_nReadSelf_Gain, m_nReadSelf_CAG, m_nReadSelf_IQ_BSH;
+    public double m_dSelf_SampleTime;
+    public bool m_bGetSelf, m_bGetSelfKValue, m_bSetSelfKSequence, m_bSetSelfCAL;
+    public int  m_nSelfNCPValue, m_nSelfNCNValue, m_nSelfCALValue;
+}
+```
+
+### 4.2 CreateRecordData 方法簽名
+
+```csharp
 public bool CreateRecordData(
-    SaveDataInfo cSaveDataInfo,    // ← 儲存參數封裝
+    SaveDataInfo cSaveDataInfo,
     string sLogDirectoryPath,
     string sDataType,              // "Analysis", "Report", "Process", "ReportStatistic", "Statistic"
     int nRepeatIndex,
@@ -164,6 +205,31 @@ public bool CreateRecordData(
 ```
 
 `SaveDataInfo` 封裝當前量測結果的完整參數，由各 AnalysisFlow 子類在 `MainFlow()` 中建構後傳入 `DataSave.CreateRecordData()`。
+
+### 4.3 檔名生成規則 (FR-013, FR-014)
+
+#### Mutual 模式
+
+```
+Frequency = Convert2Frequency(PH1, PH2)
+檔名: Report_{Frequency:0.000}_{PH1:X2}_{PH2:X2}[_{nRepeatIndex}]
+```
+
+#### Self 模式
+
+```
+SelfPH2Sum = Convert2SelfPH2SumInt(PH2E_LAT, PH2E_LMT, PH2_LAT, PH2)
+Frequency  = Convert2Frequency(SELF_PH1, SelfPH2Sum)
+檔名: Report_{Frequency:0.000}_{SELF_PH1:X2}_{SELF_PH2E_LMT:X2}_{SelfPH2Sum:X2}_{DFT_NUM:X2}_{TraceType}[_{nRepeatIndex}]
+K 序列追加: _P{NCPValue:00}N{NCNValue:00}
+```
+
+#### 檔案路徑組合
+
+```
+{LogDirectoryPath}\{DataType}\Report_{...}.txt
+DataType = "Analysis" | "Report" | "Process" | "ReportStatistic" | "Statistic"
+```
 
 ---
 
