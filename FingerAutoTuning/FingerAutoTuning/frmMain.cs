@@ -48,6 +48,8 @@ namespace FingerAutoTuning
         private Bitmap m_btResetImage;
         private Bitmap m_btPatternImage;
 
+        private Button btnRead;
+
         //private bool m_bSocketConnected = false;
         /// <summary>
         /// flag: The thread runing to receive Finger Report from socket.
@@ -322,6 +324,21 @@ namespace FingerAutoTuning
             String sWidth = SystemInformation.PrimaryMonitorSize.Width.ToString();
             String sHeight = SystemInformation.PrimaryMonitorSize.Height.ToString();
             */
+
+            // 初始化 btnRead 按鈕控制項
+            btnRead = new Button();
+            btnRead.Name = "btnRead";
+            btnRead.Text = "Read";
+            btnRead.Location = new System.Drawing.Point(748, 5);
+            btnRead.Size = new System.Drawing.Size(74, 68);
+            btnRead.FlatStyle = FlatStyle.Flat;
+            btnRead.FlatAppearance.BorderSize = 0;
+            btnRead.ForeColor = System.Drawing.Color.Black;
+            btnRead.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnRead.Visible = true;
+            btnRead.Enabled = true;
+            btnRead.Click += new EventHandler(this.btnRead_Click);
+            this.splitcontainerRight.Panel1.Controls.Add(btnRead);
         }
 
         private void SetButtonImageSize()
@@ -1721,6 +1738,14 @@ namespace FingerAutoTuning
         {
             m_cAppCore.DisplayPattern(m_cAppCore.m_sStepName, m_cAppCore.m_nCurrentExecuteIndex, m_cAppCore.m_nTotalCount);
             m_cAppCore.DisableMonitor();
+        }
+
+        /// <summary>
+        /// 點擊 btnRead 按鈕時觸發，彈出顯示 Read 文字的模態訊息視窗
+        /// </summary>
+        private void btnRead_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Read");
         }
 
         private void btnNewPattern_MouseEnter(object sender, EventArgs e)

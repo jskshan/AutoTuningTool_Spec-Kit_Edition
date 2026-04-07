@@ -222,6 +222,7 @@ AutoTuningTool/
 - HDF5 資料格式轉換
 
 **其他功能：**
+- Read 按鈕（btnRead）— 點擊後彈出顯示「Read」文字的模態訊息視窗
 - 批次處理（ElanBatchProcess / ElanBatchProcess_9F07）
 - 支援 Gen6/7/8 ELAN FW 命令集
 - Redmine 任務整合

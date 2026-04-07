@@ -17,7 +17,7 @@
 
 **Purpose**: 確認基線建置成功，保障後續修改品質
 
-- [ ] T001 在開發環境執行 `msbuild AutoTuning_NewUI.sln /p:Configuration=Debug /p:Platform=x86` 驗證三組態（Debug\|x86、Release\|x86、Release_9F07_Socket\|x86）基線建置全數通過，確認無既有錯誤
+- [X] T001 在開發環境執行 `msbuild AutoTuning_NewUI.sln /p:Configuration=Debug /p:Platform=x86` 驗證三組態（Debug\|x86、Release\|x86、Release_9F07_Socket\|x86）基線建置全數通過，確認無既有錯誤
 
 **Checkpoint**: 三組態建置通過 → 可進入 US1 實作
 
@@ -31,8 +31,8 @@
 
 ### Implementation for User Story 1
 
-- [ ] T002 [US1] 在 `FingerAutoTuning/FingerAutoTuning/frmMain.cs` 類別層級宣告 `private Button btnRead;` 私有欄位，並在建構子 `InitializeComponent()` 呼叫後以程式碼初始化控制項所有屬性（Name="btnRead", Text="Read", Location=new Point(748,5), Size=new Size(74,68), FlatStyle=FlatStyle.Flat, FlatAppearance.BorderSize=0, ForeColor=Color.Black, Anchor=AnchorStyles.Top\|AnchorStyles.Right, Visible=true, Enabled=true），將其加入 `splitcontainerRight.Panel1.Controls`，並綁定 `btnRead.Click += new EventHandler(this.btnRead_Click)`
-- [ ] T003 [US1] 在 `FingerAutoTuning/FingerAutoTuning/frmMain.cs` 實作 `private void btnRead_Click(object sender, EventArgs e)` 事件處理方法，方法內容為 `MessageBox.Show("Read")`；並在方法宣告上方加入中文 `///` XML 文件註解，說明「點擊 btnRead 按鈕時觸發，彈出顯示 Read 文字的模態訊息視窗」
+- [X] T002 [US1] 在 `FingerAutoTuning/FingerAutoTuning/frmMain.cs` 類別層級宣告 `private Button btnRead;` 私有欄位，並在建構子 `InitializeComponent()` 呼叫後以程式碼初始化控制項所有屬性（Name="btnRead", Text="Read", Location=new Point(748,5), Size=new Size(74,68), FlatStyle=FlatStyle.Flat, FlatAppearance.BorderSize=0, ForeColor=Color.Black, Anchor=AnchorStyles.Top\|AnchorStyles.Right, Visible=true, Enabled=true），將其加入 `splitcontainerRight.Panel1.Controls`，並綁定 `btnRead.Click += new EventHandler(this.btnRead_Click)`
+- [X] T003 [US1] 在 `FingerAutoTuning/FingerAutoTuning/frmMain.cs` 實作 `private void btnRead_Click(object sender, EventArgs e)` 事件處理方法，方法內容為 `MessageBox.Show("Read")`；並在方法宣告上方加入中文 `///` XML 文件註解，說明「點擊 btnRead 按鈕時觸發，彈出顯示 Read 文字的模態訊息視窗」
 
 **Checkpoint**: `btnRead` 按鈕顯示於主視窗，點擊後正確彈出模態訊息視窗顯示「Read」，User Story 1 驗收場景 1~3 全數通過
 
@@ -42,8 +42,8 @@
 
 **Purpose**: Constitution 連動更新機制 + 三組態最終建置驗證（SDD 品質 Gate）
 
-- [ ] T004 [P] 更新 `README.md`，於 FingerAutoTuning 主視窗功能描述中新增 `btnRead` 按鈕說明（遵循 Constitution IV. 連動更新機制：新增功能必更 README.md）
-- [ ] T005 執行三組態建置驗證：`msbuild AutoTuning_NewUI.sln /p:Configuration=Debug /p:Platform=x86`、`/p:Configuration=Release /p:Platform=x86`、`/p:Configuration=Release_9F07_Socket /p:Platform=x86`，確認全數通過零錯誤（Constitution SDD 品質 Gate）
+- [X] T004 [P] 更新 `README.md`，於 FingerAutoTuning 主視窗功能描述中新增 `btnRead` 按鈕說明（遵循 Constitution IV. 連動更新機制：新增功能必更 README.md）
+- [X] T005 執行三組態建置驗證：`msbuild AutoTuning_NewUI.sln /p:Configuration=Debug /p:Platform=x86`、`/p:Configuration=Release /p:Platform=x86`、`/p:Configuration=Release_9F07_Socket /p:Platform=x86`，確認全數通過零錯誤（Constitution SDD 品質 Gate）
 
 ---
 
